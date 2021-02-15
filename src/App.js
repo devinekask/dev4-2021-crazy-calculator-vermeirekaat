@@ -1,6 +1,16 @@
 import "./App.css";
+import Season from "./components/Season";
+import Flower from "./components/Flower";
+import { useState } from "react";
 
 const App = () => {
+  const [spring, setSpring] = useState("Spring");
+  const [summer, setSummer] = useState("Summer");
+  const [fall, setFall] = useState("Fall");
+  const [winter, setWinter] = useState("Winter");
+
+  const springFlowers = ["iris", "tulp", "roos", "boroma", "anemoon"];
+
   return (
     <div>
       <p className="hidden">Crazy Calculator</p>
@@ -13,13 +23,15 @@ const App = () => {
         <h2 className="hidden">Flower Form</h2>
         <label className="label" htmlFor="season">Choose a season</label>
           <select name="seasons" id="select-season">
-              <option value="">--Please select the season--</option>
-              <option value="spring">Spring</option>
-              <option value="summer">Summer</option>
-              <option value="fall">Fall</option>
-              <option value="winter">Winter</option>
+              <Season value={spring} onValueChange={value => setSpring(value)}/>
+              <Season value={summer} onValueChange={value => setSummer(value)}/>
+              <Season value={fall} onValueChange={value => setFall(value)}/>
+              <Season value={winter} onValueChange={value => setWinter(value)}/>
           </select>
 
+        <div>
+          <Flower list={springFlowers} title={<Season value={spring}/>}/>
+        </div>
       {/* via compontent checken welke bloemen er geselecteerd zijn in bovenstaande selectievenster */}
       <label className="label">Flower #1
         <input type="number" id="quantity" name="quantity" defaultValue="10"></input>
