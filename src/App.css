@@ -15,17 +15,24 @@ box-sizing: border-box;
 .title {
     font-size: 2rem;
     color: pink;
+    margin: 4rem;
+}
+
+.slogan {
+    margin: 4rem;
 }
 
 .subtitle {
     font-size: 1.5rem;
     color: darkred;
     font-style: italic;
+    margin: 5rem;
 }
 
 .placeholder {
     border-radius: 100%;
     border: .5rem solid lightgreen;
+    margin: 5rem;
 }
 
 .placeholder--small {
@@ -41,11 +48,6 @@ box-sizing: border-box;
 .placeholder--large {
     width: 50rem;
     height: 50rem;
-}
-
-.placeholder--medium {
-    width: 25rem;
-    height: 25rem;
 }
 
 .form {
