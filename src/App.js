@@ -4,12 +4,35 @@ import Flower from "./components/Flower";
 import { useState } from "react";
 
 const App = () => {
-  const [spring, setSpring] = useState("Spring");
-  const [summer, setSummer] = useState("Summer");
-  const [fall, setFall] = useState("Fall");
-  const [winter, setWinter] = useState("Winter");
+  // const [spring, setSpring] = useState("iris", "tulp", "roos", "boroma", "anemoon");
+  // const [summer, setSummer] = useState("Summer");
+  // const [fall, setFall] = useState("Fall");
+  // const [winter, setWinter] = useState("Winter");
+
+  const [season, setSeason] = useState(
+    {
+      spring: "spring", 
+      // springFlowers: ["iris", "tulp", "roos", "anemoon", "bamonia"],
+      summer: "summer",
+      // summerFlowers: ["lelie", "zonnebloem", "fresia", "lavendel", "chrysant"],
+      fall: "fall", 
+      // fallFlowers: ["dahlia", "gerbera", "aster", "statice", "chrysant"],
+      winter: "winter", 
+      // winterFlowers: ["jasmijn", "amaryllis", "camelia", "kerstster", "tijgerlelie"]
+    });
+    const {spring, summer, fall, winter} = season;
+    // const {springFlowers, summerFlowers, fallFlowers, winterFlowers} = flower;
 
   const springFlowers = ["iris", "tulp", "roos", "boroma", "anemoon"];
+
+  const handleChangeSeason = e => {
+    console.log(e.target.value);
+    const seasonValue = e.target.value;
+    const copy = {...season};
+    copy[season] = seasonValue;
+
+    setSeason(copy);
+  }
 
   return (
     <div>
@@ -22,15 +45,15 @@ const App = () => {
       <section className="form">
         <h2 className="hidden">Flower Form</h2>
         <label className="label" htmlFor="season">Choose a season</label>
-          <select name="seasons" id="select-season">
-              <Season value={spring} onValueChange={value => setSpring(value)}/>
-              <Season value={summer} onValueChange={value => setSummer(value)}/>
-              <Season value={fall} onValueChange={value => setFall(value)}/>
-              <Season value={winter} onValueChange={value => setWinter(value)}/>
+          <select onChange={handleChangeSeason} name="seasons" id="select-season">
+              <Season value={spring} />
+              <Season value={summer} />
+              <Season value={fall} />
+              <Season value={winter} />
           </select>
 
         <div>
-          <Flower list={springFlowers} title={<Season value={spring}/>}/>
+          <Flower list={springFlowers}/>
         </div>
       {/* via compontent checken welke bloemen er geselecteerd zijn in bovenstaande selectievenster */}
       <label className="label">Flower #1

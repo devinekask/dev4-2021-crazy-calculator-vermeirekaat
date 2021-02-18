@@ -1,7 +1,7 @@
-const Season = ({ value, onValueChange }) => {
+const Season = ({ value }) => {
     return (
         <>
-         <option value={value} onChange={(e) => onValueChange(e.value)}>{value}</option>
+         <option value={value}>{value}</option>
         </>
     );
 }
