@@ -1,14 +1,19 @@
-const Season = ({ list, onSelect }) => {
+const Season = ({ list, onChange }) => {
+
+    const handleSelectSeason = e => {
+        const selected = e.target.value;
+        onChange(selected);
+    }
 
     return (
         <>
             <h2 className="hidden">Flower Form</h2>
                 <label className="label" htmlFor="season">Choose a season</label>
-                    <select onChange={(e) => onSelect(e.target.value)}>
+                    <select onChange={handleSelectSeason}>
                         {list.map((season) => (
                             <option key={season.index} name="season" value={season.name}>{season.name}</option>
                         ))}
-                    </select>
+                    </select>           
         </>
     );
 }

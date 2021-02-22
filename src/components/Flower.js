@@ -1,15 +1,10 @@
-import FlowerItem from "./FlowerItem";
+const Flower = ({ list }) => {
+  console.log(list[0].flower);
 
-const Flower = (props) => {
     return (
-        <article>
-        <h2>{props.title}</h2>
-        <ul>
-          {props.list.map((item) => (
-            <FlowerItem key={item} item={item} />
-          ))}
-        </ul>
-      </article>
+      <label className="label">{list[0].flower}
+          <input type="number" id="quantity" name="quantity" defaultValue="10"></input>
+      </label>           
     );
 };
 

@@ -1,5 +1,6 @@
 import "./App.css";
 import Season from "./components/Season";
+import Flower from "./components/Flower";
 import { useState } from "react";
 
 const App = () => {
@@ -7,21 +8,27 @@ const App = () => {
   const [seasons, setSeasons] = useState([
     {
       name: "spring", 
-      flowers: "boronia"
+      // flowers: ["boronia", "iris", "tulp", "roos", "boronia"]
+      flower: "boronia"
     },
     {
       name: "summer", 
-      flowers: "lelie"
+      // flowers: ["lelie", "fresia", "zonnebloem", "chrysant", "lavendel"]
+      flower: "lelie"
     },
     {
       name: "fall", 
-      flowers: "dahlia"
+      // flowers: ["dahlia", "gerbera", "aster", "statice", "chrysant"]
+      flower: "dahlia"
     },
     {
       name: "winter", 
-      flowers: "jasmijn"
+      // flowers: ["jasmijn", "camelia", "kerstster", "tijgerlelies", "cosmea"]
+      flower: "jasmijn"
     }
   ]);
+
+  const [selectedSeason, setSelectedSeason] = useState("spring");
 
   const handleChangeSeason = (season) => {
     const copy = [...seasons];
@@ -29,7 +36,9 @@ const App = () => {
     console.log(season);
 
     setSeasons(copy);
-  }
+
+    setSelectedSeason(season);
+  } 
 
   return (
     <div>
@@ -42,12 +51,15 @@ const App = () => {
       
 
       <section className="form">
-        <Season list={seasons.filter((season) => season.name)} onSelect={(season) => handleChangeSeason(season)}/>
+        <Season 
+        list={seasons.filter((season) => season.name)} 
+        onChange={(selectedSeason) => 
+          handleChangeSeason(selectedSeason)}/>
 
       {/* via compontent checken welke bloemen er geselecteerd zijn in bovenstaande selectievenster */}
-      <label className="label">Flower #1
-        <input type="number" id="quantity" name="quantity" defaultValue="10"></input>
-      </label>
+
+      <Flower 
+      list={seasons.filter((season) => season.name === selectedSeason)}/>
 
       {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
         <label className="label">Color #1
