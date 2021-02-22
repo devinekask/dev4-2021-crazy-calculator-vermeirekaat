@@ -8,23 +8,19 @@ const App = () => {
   const [seasons, setSeasons] = useState([
     {
       name: "spring", 
-      // flowers: ["boronia", "iris", "tulp", "roos", "boronia"]
-      flower: "boronia"
+      flowers: ["boronia", "iris", "tulp", "roos", "boronia"]
     },
     {
       name: "summer", 
-      // flowers: ["lelie", "fresia", "zonnebloem", "chrysant", "lavendel"]
-      flower: "lelie"
+      flowers: ["lelie", "fresia", "zonnebloem", "chrysant", "lavendel"]
     },
     {
       name: "fall", 
-      // flowers: ["dahlia", "gerbera", "aster", "statice", "chrysant"]
-      flower: "dahlia"
+      flowers: ["dahlia", "gerbera", "aster", "statice", "chrysant"]
     },
     {
       name: "winter", 
-      // flowers: ["jasmijn", "camelia", "kerstster", "tijgerlelies", "cosmea"]
-      flower: "jasmijn"
+      flowers: ["jasmijn", "camelia", "kerstster", "tijgerlelies", "cosmea"]
     }
   ]);
 
