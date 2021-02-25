@@ -1,6 +1,7 @@
 import "./App.css";
 import Season from "./components/Season";
 import Flower from "./components/Flower";
+import Color from "./components/Color";
 import { useState } from "react";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
   ]);
 
   const [selectedSeason, setSelectedSeason] = useState("spring");
+  const [color, setColor] = useState("#F188C9");
 
   const handleChangeSeason = (season) => {
     const copy = [...seasons];
@@ -44,8 +46,6 @@ const App = () => {
         <p className="slogan">Your personal bouquet, perfect for every occasion</p>
       </section>
 
-      
-
       <section className="form">
         <Season 
         list={seasons.filter((season) => season.name)} 
@@ -58,9 +58,8 @@ const App = () => {
       list={seasons.filter((season) => season.name === selectedSeason)}/>
 
       {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
-        <label className="label">Color #1
-          <input type="color" defaultValue="#F188C9"></input>
-        </label>
+      <Color value={color} onValueChange={(value) => setColor(value)}/>
+       
       </section>
       
       <section className="bouquet">

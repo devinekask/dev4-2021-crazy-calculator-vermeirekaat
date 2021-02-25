@@ -1,6 +1,6 @@
 const Flower = ({ list }) => {
-  console.log(list[0].flowers);
-  console.log(list);
+  // console.log(list[0].flowers);
+  // console.log(list);
   const flowers = list[0].flowers;
 
     return (
@@ -8,7 +8,7 @@ const Flower = ({ list }) => {
       {
         flowers.map((flower => (
           <label className="label">{flower}
-            <input key={flower} type="number" id="quantity" name="quantity" defaultValue="10"></input>
+            <input key={list.index} type="number" id="quantity" name="quantity" defaultValue="10"></input>
           </label>   
         )))
       }
