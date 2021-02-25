@@ -66,15 +66,15 @@ const App = () => {
         <h2 className="hidden">Bouquet Example</h2>
           <article className="bouquet--small">
             <h3 className="subtitle">Bouquet Small</h3>
-            <div className="placeholder placeholder--small"></div>
+            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--small"></div>
           </article>
           <article className="bouquet--medium">
             <h3 className="subtitle">Bouquet Medium</h3>
-            <div className="placeholder placeholder--medium"></div>
+            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--medium"></div>
           </article>
           <article className="bouquet--large">
             <h3 className="subtitle">Bouquet Large</h3>
-            <div className="placeholder placeholder--large"></div>
+            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--large"></div>
           </article>
       </section>
     </div>

@@ -11,7 +11,7 @@ const Season = ({ list, onChange }) => {
                 <label className="label" htmlFor="season">Choose a season</label>
                     <select onChange={handleSelectSeason}>
                         {list.map((season) => (
-                            <option key={season.index} name="season" value={season.name}>{season.name}</option>
+                            <option key={list.index} name="season" value={season.name}>{season.name}</option>
                         ))}
                     </select>           
         </>

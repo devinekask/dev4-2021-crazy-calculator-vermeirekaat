@@ -31,7 +31,7 @@ box-sizing: border-box;
 
 .placeholder {
     border-radius: 100%;
-    border: .5rem solid lightgreen;
+    border: .5rem solid;
     margin: 5rem;
 }
 
