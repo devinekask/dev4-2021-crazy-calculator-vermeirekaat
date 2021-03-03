@@ -33,6 +33,12 @@ box-sizing: border-box;
     text-align: center;
 }
 
+.content {
+    display: grid;
+    grid-template-rows: 1fr; 
+    grid-template-columns: 40% 60%;
+}
+
 .subtitle {
     font-size: 1.5rem;
     color: darkred;
@@ -40,6 +46,10 @@ box-sizing: border-box;
     margin: 5rem;
 }
 
+.bouquet {
+    grid-row: 1;
+    grid-column: 2;
+}
 .placeholder {
     border-radius: 100%;
     border: .5rem solid;
@@ -86,13 +96,15 @@ box-sizing: border-box;
 }
 
 .placeholder--large {
-    width: 50rem;
-    height: 50rem;
+    width: 45rem;
+    height: 45rem;
 }
 
 .form {
     background-color: lightpink;
     padding: 2.5rem;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 input, label {

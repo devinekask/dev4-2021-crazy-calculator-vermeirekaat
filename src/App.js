@@ -2,12 +2,8 @@ import "./App.css";
 import Season from "./components/Season";
 import Flower from "./components/Flower";
 import Color from "./components/Color";
-import Anemone from "./assets/anemone.png";
-import Baronia from "./assets/baronia.png";
-import Iris from "./assets/iris.png";
-import Rose from "./assets/rose.png";
-import Tulip from "./assets/tulip.png";
 import { useState } from "react";
+import Bouquet from "./components/Bouquet";
 
 const App = () => {
 
@@ -51,7 +47,8 @@ const App = () => {
         <p className="slogan">Your personal bouquet, perfect for every occasion</p>
       </section>
 
-      <section className="form">
+  <section className="content">
+      <article className="form">
         <Season 
         list={seasons.filter((season) => season.name)} 
         onChange={(selectedSeason) => 
@@ -65,11 +62,17 @@ const App = () => {
       {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
       <Color value={color} onValueChange={(value) => setColor(value)}/>
        
-      </section>
+      </article>
       
-      <section className="bouquet">
-        <h2 className="hidden">Bouquet Example</h2>
-          <article className="bouquet--small">
+      <article className="bouquet">
+
+        <input className="subtitle" type="button" value="Bouquet Small"></input>
+        <input className="subtitle" type="button" value="Bouquet Medium"></input>
+        <input className="subtitle" type="button" value="Bouquet Large"></input>
+
+        <Bouquet/>
+
+          {/* <section className="bouquet--small">
             <h3 className="subtitle">Bouquet Small</h3>
             <div style={{ borderColor: `${color}`}} className="placeholder placeholder--small">
               <img className="place__top-left" src={Anemone} alt="anemone" width="50"></img>
@@ -78,8 +81,8 @@ const App = () => {
               <img className="place__bottom-left" src={Rose} alt="rose" width="50"></img>
               <img className="place__bottom-right" src={Tulip} alt="tulip" width="50"></img>
             </div>
-          </article>
-          <article className="bouquet--medium">
+          </section>
+          <section className="bouquet--medium">
             <h3 className="subtitle">Bouquet Medium</h3>
             <div style={{ borderColor: `${color}`}} className="placeholder placeholder--medium">
               <img className="place__top-left" src={Anemone} alt="anemone" width="150"></img>
@@ -88,17 +91,18 @@ const App = () => {
               <img className="place__bottom-left" src={Rose} alt="rose" width="150"></img>
               <img className="place__bottom-right" src={Tulip} alt="tulip" width="150"></img>
             </div>
-          </article>
-          <article className="bouquet--large">
+          </section>
+          <section className="bouquet--large">
             <h3 className="subtitle">Bouquet Large</h3>
             <div style={{ borderColor: `${color}`}} className="placeholder placeholder--large">
-              <img className="place__top-left" src={Anemone} alt="anemone" width="300"></img>
-              <img className="place__top-right" src={Baronia} alt="baronia" width="300"></img>
-              <img className="place__middle" src={Iris} alt="iris" width="300"></img>
-              <img className="place__bottom-left" src={Rose} alt="rose" width="300"></img>
-              <img className="place__bottom-right" src={Tulip} alt="tulip" width="300"></img>
+              <img className="place__top-left" src={Anemone} alt="anemone" width="250"></img>
+              <img className="place__top-right" src={Baronia} alt="baronia" width="250"></img>
+              <img className="place__middle" src={Iris} alt="iris" width="250"></img>
+              <img className="place__bottom-left" src={Rose} alt="rose" width="250"></img>
+              <img className="place__bottom-right" src={Tulip} alt="tulip" width="250"></img>
             </div>
-          </article>
+        </section> */ }
+        </article> 
       </section>
     </div>
     
