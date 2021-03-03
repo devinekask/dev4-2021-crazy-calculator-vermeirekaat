@@ -3,6 +3,20 @@ import Baronia from "../assets/baronia.png";
 import Iris from "../assets/iris.png";
 import Rose from "../assets/rose.png";
 import Tulip from "../assets/tulip.png";
+import Lelie from "../assets/lelie.png";
+import Fresia from "../assets/fresia.png";
+import Zonnebloem from "../assets/zonnebloem.png";
+import Chrysant from "../assets/chrysant.png";
+import Lavendel from "../assets/lavendel.png";
+import Dahlia from "../assets/dahlia.png";
+import Gerbera from "../assets/gerbera.png";
+import Aster from "../assets/aster.png";
+import Statice from "../assets/statice.png";
+import Jasmijn from "../assets/jasmijn.png";
+import Camelia from "../assets/camelia.png";
+import Kerstster from "../assets/kerstster.png";
+import Tijgerlelie from "../assets/tijgerlelie.png";
+import Cosmea from "../assets/cosmea.png";
 
 const Bouquet = ({ item }) => {
     const size = item[0];

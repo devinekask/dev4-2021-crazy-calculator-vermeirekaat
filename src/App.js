@@ -1,8 +1,8 @@
 import "./App.css";
+import { useState } from "react";
 import Season from "./components/Season";
 import Flower from "./components/Flower";
 import Color from "./components/Color";
-import { useState } from "react";
 import Buttons from "./components/Buttons";
 import Bouquet from "./components/Bouquet";
 
@@ -23,7 +23,7 @@ const App = () => {
     },
     {
       name: "Winter", 
-      flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelies", "Cosmea"]
+      flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"]
     }
   ]);
 
