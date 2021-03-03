@@ -3,6 +3,7 @@ import Season from "./components/Season";
 import Flower from "./components/Flower";
 import Color from "./components/Color";
 import { useState } from "react";
+import Buttons from "./components/Buttons";
 import Bouquet from "./components/Bouquet";
 
 const App = () => {
@@ -26,6 +27,23 @@ const App = () => {
     }
   ]);
 
+  const [dimensions, setDimensions] = useState([
+    {
+      name: "small", 
+      number: 50
+    },
+    {
+      name: "medium", 
+      number: 150
+    },
+    {
+      name: "large",
+      number: 250
+    }
+  ]);
+
+  const [clickedDimension, setClickedDimension] = useState("small");
+
   const [selectedSeason, setSelectedSeason] = useState("Spring");
   const [color, setColor] = useState("#F188C9");
 
@@ -38,6 +56,16 @@ const App = () => {
 
     setSelectedSeason(season);
   } 
+
+  const handleClickButton = (button) => {
+    const copy = [...dimensions];
+    copy[dimensions] = button;
+    console.log(button);
+
+    setDimensions(copy);
+    
+    setClickedDimension(button);
+  }
 
   return (
     <div>
@@ -65,6 +93,8 @@ const App = () => {
       </article>
       
       <article className="bouquet">
+
+        <Buttons sizes={dimensions.filter((dimension) => dimension.name)} onClick={(clickedDimension) => handleClickButton(clickedDimension)}/>
 
         <Bouquet/>
 
