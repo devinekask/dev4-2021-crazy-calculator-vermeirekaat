@@ -66,10 +66,6 @@ const App = () => {
       
       <article className="bouquet">
 
-        <input className="subtitle" type="button" value="Bouquet Small"></input>
-        <input className="subtitle" type="button" value="Bouquet Medium"></input>
-        <input className="subtitle" type="button" value="Bouquet Large"></input>
-
         <Bouquet/>
 
           {/* <section className="bouquet--small">
