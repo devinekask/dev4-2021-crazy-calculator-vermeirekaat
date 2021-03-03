@@ -96,41 +96,11 @@ const App = () => {
 
         <Buttons sizes={dimensions.filter((dimension) => dimension.name)} onClick={(clickedDimension) => handleClickButton(clickedDimension)}/>
 
-        <Bouquet item={dimensions.filter((dimension) => dimension.name === clickedDimension)}/>
+        <Bouquet list={seasons.filter((season) => season.name === selectedSeason)} item={dimensions.filter((dimension) => dimension.name === clickedDimension)}/>
 
-          {/* <section className="bouquet--small">
-            <h3 className="subtitle">Bouquet Small</h3>
-            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--small">
-              <img className="place__top-left" src={Anemone} alt="anemone" width="50"></img>
-              <img className="place__top-right" src={Baronia} alt="baronia" width="50"></img>
-              <img className="place__middle" src={Iris} alt="iris" width="50"></img>
-              <img className="place__bottom-left" src={Rose} alt="rose" width="50"></img>
-              <img className="place__bottom-right" src={Tulip} alt="tulip" width="50"></img>
-            </div>
-          </section>
-          <section className="bouquet--medium">
-            <h3 className="subtitle">Bouquet Medium</h3>
-            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--medium">
-              <img className="place__top-left" src={Anemone} alt="anemone" width="150"></img>
-              <img className="place__top-right" src={Baronia} alt="baronia" width="150"></img>
-              <img className="place__middle" src={Iris} alt="iris" width="150"></img>
-              <img className="place__bottom-left" src={Rose} alt="rose" width="150"></img>
-              <img className="place__bottom-right" src={Tulip} alt="tulip" width="150"></img>
-            </div>
-          </section>
-          <section className="bouquet--large">
-            <h3 className="subtitle">Bouquet Large</h3>
-            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--large">
-              <img className="place__top-left" src={Anemone} alt="anemone" width="250"></img>
-              <img className="place__top-right" src={Baronia} alt="baronia" width="250"></img>
-              <img className="place__middle" src={Iris} alt="iris" width="250"></img>
-              <img className="place__bottom-left" src={Rose} alt="rose" width="250"></img>
-              <img className="place__bottom-right" src={Tulip} alt="tulip" width="250"></img>
-            </div>
-        </section> */ }
-        </article> 
-      </section>
-    </div>
+      </article> 
+    </section>
+  </div>
     
   );
 };

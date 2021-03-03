@@ -6,11 +6,11 @@ const Flower = ({ list }) => {
     return (
       <>
       {
-        flowers.map((flower => (
+        flowers.map((flower) => (
           <label className="label">{flower}
             <input key={list.index} type="number" id="quantity" name="quantity" defaultValue="10"></input>
           </label>   
-        )))
+        ))
       }
       </>
               

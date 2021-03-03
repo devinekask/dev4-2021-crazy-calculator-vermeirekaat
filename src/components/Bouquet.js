@@ -18,18 +18,32 @@ import Kerstster from "../assets/kerstster.png";
 import Tijgerlelie from "../assets/tijgerlelie.png";
 import Cosmea from "../assets/cosmea.png";
 
-const Bouquet = ({ item }) => {
+const Bouquet = ({ item, list }) => {
+    const placeholders = ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"];
     const size = item[0];
+    // console.log(list);
+
+    const flowers = list[0].flowers;
+    console.log(flowers);
+    flowers.map((flower) => (console.log(flower)));
 
     return (
         <section className="bouquet">
         <h3 className="subtitle">Bouquet Small</h3>
            <div className={size.name}>
-               <img className="place__top-left" src={Anemone} alt="anemone" width={size.number}></img>
+            {
+            placeholders.map((placeholder) => (
+                flowers.map((flower) => (
+                    <img className={placeholder} src={flower} alt={flower} width={size.number} key={list.key}></img>
+                ))    
+            ))
+            }
+               
+               {/* <img className="place__top-right" src={Anemone} alt="baronia" width={size.number}></img>
                <img className="place__top-right" src={Baronia} alt="baronia" width={size.number}></img>
                <img className="place__middle" src={Iris} alt="iris" width={size.number}></img>
                <img className="place__bottom-left" src={Rose} alt="rose" width={size.number}></img>
-               <img className="place__bottom-right" src={Tulip} alt="tulip" width={size.number}></img>
+               <img className="place__bottom-right" src={Tulip} alt="tulip" width={size.number}></img>*/ }
            </div>
        </section>
     );
