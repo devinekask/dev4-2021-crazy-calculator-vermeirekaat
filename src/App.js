@@ -2,30 +2,35 @@ import "./App.css";
 import Season from "./components/Season";
 import Flower from "./components/Flower";
 import Color from "./components/Color";
+import Anemone from "./assets/anemone.png";
+import Baronia from "./assets/baronia.png";
+import Iris from "./assets/iris.png";
+import Rose from "./assets/rose.png";
+import Tulip from "./assets/tulip.png";
 import { useState } from "react";
 
 const App = () => {
 
   const [seasons, setSeasons] = useState([
     {
-      name: "spring", 
-      flowers: ["boronia", "iris", "tulp", "roos", "boronia"]
+      name: "Spring", 
+      flowers: ["Anemone", "Iris", "Tulp", "Roos", "Baronia"]
     },
     {
-      name: "summer", 
-      flowers: ["lelie", "fresia", "zonnebloem", "chrysant", "lavendel"]
+      name: "Summer", 
+      flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"]
     },
     {
-      name: "fall", 
-      flowers: ["dahlia", "gerbera", "aster", "statice", "chrysant"]
+      name: "Fall", 
+      flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"]
     },
     {
-      name: "winter", 
-      flowers: ["jasmijn", "camelia", "kerstster", "tijgerlelies", "cosmea"]
+      name: "Winter", 
+      flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelies", "Cosmea"]
     }
   ]);
 
-  const [selectedSeason, setSelectedSeason] = useState("spring");
+  const [selectedSeason, setSelectedSeason] = useState("Spring");
   const [color, setColor] = useState("#F188C9");
 
   const handleChangeSeason = (season) => {
@@ -66,15 +71,33 @@ const App = () => {
         <h2 className="hidden">Bouquet Example</h2>
           <article className="bouquet--small">
             <h3 className="subtitle">Bouquet Small</h3>
-            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--small"></div>
+            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--small">
+              <img className="place__top-left" src={Anemone} alt="anemone" width="50"></img>
+              <img className="place__top-right" src={Baronia} alt="baronia" width="50"></img>
+              <img className="place__middle" src={Iris} alt="iris" width="50"></img>
+              <img className="place__bottom-left" src={Rose} alt="rose" width="50"></img>
+              <img className="place__bottom-right" src={Tulip} alt="tulip" width="50"></img>
+            </div>
           </article>
           <article className="bouquet--medium">
             <h3 className="subtitle">Bouquet Medium</h3>
-            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--medium"></div>
+            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--medium">
+              <img className="place__top-left" src={Anemone} alt="anemone" width="150"></img>
+              <img className="place__top-right" src={Baronia} alt="baronia" width="150"></img>
+              <img className="place__middle" src={Iris} alt="iris" width="150"></img>
+              <img className="place__bottom-left" src={Rose} alt="rose" width="150"></img>
+              <img className="place__bottom-right" src={Tulip} alt="tulip" width="150"></img>
+            </div>
           </article>
           <article className="bouquet--large">
             <h3 className="subtitle">Bouquet Large</h3>
-            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--large"></div>
+            <div style={{ borderColor: `${color}`}} className="placeholder placeholder--large">
+              <img className="place__top-left" src={Anemone} alt="anemone" width="300"></img>
+              <img className="place__top-right" src={Baronia} alt="baronia" width="300"></img>
+              <img className="place__middle" src={Iris} alt="iris" width="300"></img>
+              <img className="place__bottom-left" src={Rose} alt="rose" width="300"></img>
+              <img className="place__bottom-right" src={Tulip} alt="tulip" width="300"></img>
+            </div>
           </article>
       </section>
     </div>
