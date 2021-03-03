@@ -10,7 +10,7 @@ const Buttons = ({ sizes, onClick }) => {
                 <input onClick={(e) => handleClickButton(e)} className="button" type="button" value={size.name}></input>
             ))}
         </div>
-
+        
     );
 };
 

@@ -50,7 +50,7 @@ const App = () => {
   const handleChangeSeason = (season) => {
     const copy = [...seasons];
     copy[seasons] = season;
-    console.log(season);
+    // console.log(season);
 
     setSeasons(copy);
 
@@ -60,7 +60,7 @@ const App = () => {
   const handleClickButton = (button) => {
     const copy = [...dimensions];
     copy[dimensions] = button;
-    console.log(button);
+    // console.log(button);
 
     setDimensions(copy);
     
@@ -96,7 +96,7 @@ const App = () => {
 
         <Buttons sizes={dimensions.filter((dimension) => dimension.name)} onClick={(clickedDimension) => handleClickButton(clickedDimension)}/>
 
-        <Bouquet/>
+        <Bouquet item={dimensions.filter((dimension) => dimension.name === clickedDimension)}/>
 
           {/* <section className="bouquet--small">
             <h3 className="subtitle">Bouquet Small</h3>
