@@ -50,15 +50,6 @@ box-sizing: border-box;
     grid-row: 1;
     grid-column: 2;
 }
-.placeholder {
-    border-radius: 100%;
-    border: .5rem solid;
-    margin: 5rem;
-
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-}
 
 .place__top-left {
     grid-row: 1;
@@ -86,16 +77,40 @@ box-sizing: border-box;
 }
 
 .small {
+    border-radius: 100%;
+    border: .3rem solid;
+    margin: 5rem;
+
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
     width: 10rem;
     height: 10rem;
 }
 
 .medium {
+    border-radius: 100%;
+    border: .3rem solid;
+    margin: 5rem;
+
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
     width: 25rem;
     height: 25rem;
 }
 
 .large {
+    border-radius: 100%;
+    border: .3rem solid;
+    margin: 5rem;
+
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
     width: 45rem;
     height: 45rem;
 }

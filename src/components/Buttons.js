@@ -7,7 +7,7 @@ const Buttons = ({ sizes, onClick }) => {
     return (
         <div className="button__wrapper">
             {sizes.map((size) => (
-                <input onClick={(e) => handleClickButton(e)} className="button" type="button" value={size.name}></input>
+                <input onClick={(e) => handleClickButton(e)} className="button" type="button" value={size.name} key={sizes.index}></input>
             ))}
         </div>
         

@@ -10,7 +10,7 @@ const Bouquet = ({ item }) => {
     return (
         <section className="bouquet">
         <h3 className="subtitle">Bouquet Small</h3>
-           <div className="placeholder" className={size.name}>
+           <div className={size.name}>
                <img className="place__top-left" src={Anemone} alt="anemone" width={size.number}></img>
                <img className="place__top-right" src={Baronia} alt="baronia" width={size.number}></img>
                <img className="place__middle" src={Iris} alt="iris" width={size.number}></img>
