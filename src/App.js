@@ -6,24 +6,52 @@ import Color from "./components/Color";
 import Buttons from "./components/Buttons";
 import Bouquet from "./components/Bouquet";
 
+import Anemone from "./assets/anemone.png";
+import Baronia from "./assets/baronia.png";
+import Iris from "./assets/iris.png";
+import Rose from "./assets/rose.png";
+import Tulip from "./assets/tulip.png";
+import Lelie from "./assets/lelie.png";
+import Fresia from "./assets/fresia.png";
+import Zonnebloem from "./assets/zonnebloem.png";
+import Chrysant from "./assets/chrysant.png";
+import Lavendel from "./assets/lavendel.png";
+import Dahlia from "./assets/dahlia.png";
+import Gerbera from "./assets/gerbera.png";
+import Aster from "./assets/aster.png";
+import Statice from "./assets/statice.png";
+import Jasmijn from "./assets/jasmijn.png";
+import Camelia from "./assets/camelia.png";
+import Kerstster from "./assets/kerstster.png";
+import Tijgerlelie from "./assets/tijgerlelie.png";
+import Cosmea from "./assets/cosmea.png";
+
 const App = () => {
 
   const [seasons, setSeasons] = useState([
     {
       name: "Spring", 
-      flowers: ["Anemone", "Iris", "Tulp", "Roos", "Baronia"]
+      flowers: ["Anemone", "Iris", "Tulp", "Roos", "Baronia"],
+      images: [Anemone, Iris, Tulip, Rose, Baronia],
+      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
     },
     {
       name: "Summer", 
-      flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"]
+      flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"],
+      images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel],
+      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
     },
     {
       name: "Fall", 
-      flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"]
+      flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"],
+      images: [Dahlia, Gerbera, Aster, Statice, Chrysant],
+      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
     },
     {
       name: "Winter", 
-      flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"]
+      flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"],
+      images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea],
+      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
     }
   ]);
 
