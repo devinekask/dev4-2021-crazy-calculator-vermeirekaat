@@ -32,26 +32,22 @@ const App = () => {
     {
       name: "Spring", 
       flowers: ["Anemone", "Iris", "Tulp", "Roos", "Baronia"],
-      images: [Anemone, Iris, Tulip, Rose, Baronia],
-      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
+      images: [Anemone, Iris, Tulip, Rose, Baronia,Anemone, Iris, Tulip, Rose]
     },
     {
       name: "Summer", 
       flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"],
-      images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel],
-      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
+      images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia, Zonnebloem, Chrysant]
     },
     {
       name: "Fall", 
       flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"],
-      images: [Dahlia, Gerbera, Aster, Statice, Chrysant],
-      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
+      images: [Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice]
     },
     {
       name: "Winter", 
       flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"],
-      images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea],
-      placeholders: ["place__top-left", "place__top-right", "place__middle", "place__bottom-left", "place__bottom-right"]
+      images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea]
     }
   ]);
 
@@ -78,7 +74,6 @@ const App = () => {
   const handleChangeSeason = (season) => {
     const copy = [...seasons];
     copy[seasons] = season;
-    // console.log(season);
 
     setSeasons(copy);
 
