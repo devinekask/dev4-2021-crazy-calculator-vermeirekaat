@@ -9,7 +9,7 @@ const Bouquet = ({ item, list }) => {
            <div className={size.name}>
             {
             flowers.map((flower) => (
-                    <img  src={flower} alt={flower} width={size.number}></img>
+                    <img src={flower} alt={flower} width={size.number}></img>
                 ))    
             }
            </div>

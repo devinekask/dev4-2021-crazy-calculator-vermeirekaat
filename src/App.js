@@ -47,22 +47,25 @@ const App = () => {
     {
       name: "Winter", 
       flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"],
-      images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea]
+      images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea, Jasmijn, Camelia, Kerstster, Tijgerlelie]
     }
   ]);
 
   const [dimensions, setDimensions] = useState([
     {
       name: "small", 
-      number: 50
+      number: 50, 
+      total: 9
     },
     {
       name: "medium", 
-      number: 150
+      number: 100,
+      total: 18
     },
     {
       name: "large",
-      number: 250
+      number: 150,
+      total: 27
     }
   ]);
 
@@ -108,7 +111,7 @@ const App = () => {
       {/* via compontent checken welke bloemen er geselecteerd zijn in bovenstaande selectievenster */}
 
       <Flower 
-      list={seasons.filter((season) => season.name === selectedSeason)}/>
+      list={seasons.filter((season) => season.name === selectedSeason)} total={dimensions.filter((dimension) => dimension.name === clickedDimension)}/>
 
       {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
       <Color value={color} onValueChange={(value) => setColor(value)}/>
