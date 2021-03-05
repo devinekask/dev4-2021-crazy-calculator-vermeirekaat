@@ -4,7 +4,7 @@ const Bouquet = ({ item, list }) => {
     const flowers = list[0].images;
 
     return (
-        <section className="bouquet">
+        <section className={size.class}>
         <h3 className="subtitle">Bouquet {size.name}</h3>
            <div className={size.name}>
             {

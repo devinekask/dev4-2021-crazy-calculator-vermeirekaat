@@ -37,12 +37,12 @@ const App = () => {
     {
       name: "Summer", 
       flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"],
-      images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia, Zonnebloem, Chrysant]
+      images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia, Zonnebloem, Chrysant, Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia]
     },
     {
       name: "Fall", 
       flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"],
-      images: [Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice]
+      images: [Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice, Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice, Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera]
     },
     {
       name: "Winter", 
@@ -59,13 +59,13 @@ const App = () => {
     },
     {
       name: "medium", 
-      number: 100,
-      total: 18
+      number: 75,
+      total: 16
     },
     {
       name: "large",
-      number: 150,
-      total: 27
+      number: 100,
+      total: 25
     }
   ]);
 
