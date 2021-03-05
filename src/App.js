@@ -55,17 +55,20 @@ const App = () => {
     {
       name: "small", 
       number: 50, 
-      total: 9
+      max: 9, 
+      amount: [2, 2, 2, 2, 1]
     },
     {
       name: "medium", 
       number: 75,
-      total: 16
+      max: 16, 
+      amount: [4, 3, 3, 3, 3]
     },
     {
       name: "large",
       number: 100,
-      total: 25
+      max: 25, 
+      amount: [5, 5, 5, 5, 5]
     }
   ]);
 
@@ -104,25 +107,53 @@ const App = () => {
   <section className="content">
       <article className="form">
         <Season 
-        list={seasons.filter((season) => season.name)} 
-        onChange={(selectedSeason) => 
+        list= {
+          seasons.filter((season) => season.name)
+          } 
+        onChange= {(selectedSeason) => 
           handleChangeSeason(selectedSeason)}/>
 
-      {/* via compontent checken welke bloemen er geselecteerd zijn in bovenstaande selectievenster */}
-
       <Flower 
-      list={seasons.filter((season) => season.name === selectedSeason)} total={dimensions.filter((dimension) => dimension.name === clickedDimension)}/>
+      list= { 
+        seasons.filter((season) => 
+          season.name === selectedSeason)
+        } 
+      total= { 
+        dimensions.filter((dimension) => 
+        dimension.name === clickedDimension)
+        }
+      />
 
       {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
-      <Color value={color} onValueChange={(value) => setColor(value)}/>
+      <Color 
+        value={color} 
+        onValueChange={(value) => setColor(value)}
+      />
        
       </article>
       
       <article className="bouquet">
 
-        <Buttons sizes={dimensions.filter((dimension) => dimension.name)} onClick={(clickedDimension) => handleClickButton(clickedDimension)}/>
+        <Buttons 
+        sizes= {
+          dimensions.filter((dimension) => 
+            dimension.name)
+          } 
+        onClick= {
+          (clickedDimension) => handleClickButton(clickedDimension)
+          }
+        />
 
-        <Bouquet list={seasons.filter((season) => season.name === selectedSeason)} item={dimensions.filter((dimension) => dimension.name === clickedDimension)}/>
+        <Bouquet 
+          list= {
+            seasons.filter((season) => 
+              season.name === selectedSeason)
+            } 
+          item= {
+            dimensions.filter((dimension) => 
+            dimension.name === clickedDimension)
+          }
+        />
 
       </article> 
     </section>
