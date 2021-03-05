@@ -1,7 +1,14 @@
-const Flower = ({ list, total }) => {
+const Flower = ({ list, total, onChange}) => {
 
   const flowers = list[0].flowers;
   const amount = total[0];
+  // console.log(changedAmount);
+
+  const handleChangeValue = (e) => {
+    const changed = e.target.value;
+    // const flower = e.target.name;
+    onChange(changed);
+  }
 
     return (
       <>
@@ -9,7 +16,7 @@ const Flower = ({ list, total }) => {
       {
         flowers.map((flower) => (
           <label className="label">{flower}
-              <input key={flower.indexOf()} type="number" id="quantity" name="quantity" min="0" defaultValue="0"></input>     
+              <input onChange={handleChangeValue} key={flower.indexOf()} type="number" id="quantity" name={flower} min="0" defaultValue="0"></input>     
           </label>   
         ))
       }

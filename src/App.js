@@ -55,26 +55,29 @@ const App = () => {
     {
       name: "small", 
       number: 50, 
-      max: 9, 
-      amount: [2, 2, 2, 2, 1]
+      max: 9,
+      amount: []
     },
     {
       name: "medium", 
       number: 75,
-      max: 16, 
-      amount: [4, 3, 3, 3, 3]
+      max: 16,
+      amount: []
     },
     {
       name: "large",
       number: 100,
-      max: 25, 
-      amount: [5, 5, 5, 5, 5]
+      max: 25,
+      amount: []
     }
   ]);
 
   const [clickedDimension, setClickedDimension] = useState("small");
 
   const [selectedSeason, setSelectedSeason] = useState("Spring");
+
+  const [changedAmount, setChangedAmount] = useState(["0"]); 
+
   const [color, setColor] = useState("#F188C9");
 
   const handleChangeSeason = (season) => {
@@ -85,6 +88,23 @@ const App = () => {
 
     setSelectedSeason(season);
   } 
+
+  const handleChangeAmount = (value, size) => {
+    const copy = [...dimensions];
+    const index = copy.findIndex((check) => check.name === size);
+    console.log(copy[index]);
+    copy[index].amount = value;
+
+    setDimensions(copy);
+
+    const newAmount = calculateAmount(copy);
+    
+    setChangedAmount(newAmount);
+  }
+
+  const calculateAmount = array => {
+    return array.reduce((total, number) => Number(total) + Number(number));
+  }
 
   const handleClickButton = (button) => {
     const copy = [...dimensions];
@@ -121,6 +141,9 @@ const App = () => {
       total= { 
         dimensions.filter((dimension) => 
         dimension.name === clickedDimension)
+        }
+      onChange= {
+        (changedAmount) => handleChangeAmount(changedAmount, clickedDimension)
         }
       />
 
