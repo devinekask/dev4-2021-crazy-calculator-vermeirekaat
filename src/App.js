@@ -30,55 +30,94 @@ const App = () => {
 
   const [seasons, setSeasons] = useState([
     {
-      name: "Spring", 
+      name: "spring", 
       flowers: ["Anemone", "Iris", "Tulp", "Roos", "Baronia"],
-      images: [Anemone, Iris, Tulip, Rose, Baronia,Anemone, Iris, Tulip, Rose]
+      images: [Anemone, Iris, Tulip, Rose, Baronia,Anemone, Iris, Tulip, Rose], 
     },
     {
-      name: "Summer", 
+      name: "summer", 
       flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"],
       images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia, Zonnebloem, Chrysant, Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia]
     },
     {
-      name: "Fall", 
+      name: "fall", 
       flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"],
       images: [Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice, Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice, Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera]
     },
     {
-      name: "Winter", 
+      name: "winter", 
       flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"],
       images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea, Jasmijn, Camelia, Kerstster, Tijgerlelie]
     }
   ]);
+
+  const [spring, setSpring] = useState([
+    {
+      name: "Anemone", 
+      image: Anemone, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Iris", 
+      image: Iris, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Tulp", 
+      image: Tulip, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Rose", 
+      image: Rose, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Baronia", 
+      image: Baronia, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+  ])
 
   const [dimensions, setDimensions] = useState([
     {
       name: "small", 
       number: 50, 
       max: 9,
-      amount: []
     },
     {
       name: "medium", 
       number: 75,
       max: 16,
-      amount: []
     },
     {
       name: "large",
       number: 100,
       max: 25,
-      amount: []
     }
   ]);
 
   const [clickedDimension, setClickedDimension] = useState("small");
 
-  const [selectedSeason, setSelectedSeason] = useState("Spring");
+  const [selectedSeason, setSelectedSeason] = useState("spring");
 
-  const [changedAmount, setChangedAmount] = useState(["0"]); 
+  const changeColor = (color) => {
+    const copy = [...selectedSeason];
+    // onst index = copy.findIndex((check) => check.name === selectedSeason);
+    console.log(copy);
+    console.log(color);
+  }
 
-  const [color, setColor] = useState("#F188C9");
+  const handleChangeAmount = (values) => {
+    console.log(`amount: ${values[0]}`);
+    console.log(`flower: ${values[1]}`);
+
+  }
 
   const handleChangeSeason = (season) => {
     const copy = [...seasons];
@@ -88,23 +127,6 @@ const App = () => {
 
     setSelectedSeason(season);
   } 
-
-  const handleChangeAmount = (value, size) => {
-    const copy = [...dimensions];
-    const index = copy.findIndex((check) => check.name === size);
-    console.log(copy[index]);
-    copy[index].amount = value;
-
-    setDimensions(copy);
-
-    const newAmount = calculateAmount(copy);
-    
-    setChangedAmount(newAmount);
-  }
-
-  const calculateAmount = array => {
-    return array.reduce((total, number) => Number(total) + Number(number));
-  }
 
   const handleClickButton = (button) => {
     const copy = [...dimensions];
@@ -132,26 +154,30 @@ const App = () => {
           } 
         onChange= {(selectedSeason) => 
           handleChangeSeason(selectedSeason)}/>
-
+      
       <Flower 
-      list= { 
-        seasons.filter((season) => 
-          season.name === selectedSeason)
-        } 
-      total= { 
-        dimensions.filter((dimension) => 
-        dimension.name === clickedDimension)
+        list= { 
+          // seasons.filter((season) => 
+          // season.name === selectedSeason)
+          spring
         }
-      onChange= {
-        (changedAmount) => handleChangeAmount(changedAmount, clickedDimension)
+        total= { 
+          dimensions.filter((dimension) => 
+          dimension.name === clickedDimension)
+        } 
+        onAmountChange= {(changedAmount) => 
+          handleChangeAmount(changedAmount)
+        }
+        onColorChange= {
+          (value) => changeColor(value)
         }
       />
 
       {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
-      <Color 
-        value={color} 
-        onValueChange={(value) => setColor(value)}
-      />
+      {/* < Color 
+        value={colors} 
+        onValueChange={(value) => changeColor(value)}
+      /> */ }
        
       </article>
       
