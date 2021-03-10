@@ -82,7 +82,106 @@ const App = () => {
       color: "#FAA3FF", 
       amount: 2
     },
-  ])
+  ]);
+
+  const [summer, setSummer] = useState([
+    {
+      name: "Lilie", 
+      image: Lelie, 
+      color: "#FAA3FF", 
+      amount: 0
+    },
+    {
+      name: "Fresia", 
+      image: Fresia, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Zonnebloem", 
+      image: Zonnebloem, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Chrysant", 
+      image: Chrysant, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Lavendel", 
+      image: Lavendel, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+  ]);
+
+  const [fall, setFall] = useState([
+    {
+      name: "Dahlia", 
+      image: Dahlia, 
+      color: "#FAA3FF", 
+      amount: 0
+    },
+    {
+      name: "Gerbera", 
+      image: Gerbera, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Aster", 
+      image: Aster, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Statice", 
+      image: Statice, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Chrysant", 
+      image: Chrysant, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+  ]);
+
+  const [winter, setWinter] = useState([
+    {
+      name: "Jasmijn", 
+      image: Jasmijn, 
+      color: "#FAA3FF", 
+      amount: 0
+    },
+    {
+      name: "Camelia", 
+      image: Camelia, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Kerstster", 
+      image: Kerstster, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Tijgerlelie", 
+      image: Tijgerlelie, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Cosmea", 
+      image: Cosmea, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+  ]);
 
   const [dimensions, setDimensions] = useState([
     {
@@ -111,10 +210,6 @@ const App = () => {
   }
 
   const handleChangeAmount = (values) => {
-    // console.log(`amount: ${values[0]}`);
-    // console.log(`flower: ${values[1]}`);
-    // const flower = values[1];
-    // let changedAmount = values[0];
     const items = values[0];
     const changedAmount = values[1]; 
     const copy = [...spring]; 
