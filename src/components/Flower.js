@@ -1,8 +1,6 @@
 const Flower = ({ list, total, onColorChange, onAmountChange }) => {
 
-  // const flowers = list[0].flowers;
   const amount = total[0];
-  // console.log(list);
 
   const changeAmount = (e, flower) => {
     const amount = e.target.value;
@@ -24,7 +22,7 @@ const Flower = ({ list, total, onColorChange, onAmountChange }) => {
          </label>
          </>
         ))
-        }
+      }
       </form>
               
     );

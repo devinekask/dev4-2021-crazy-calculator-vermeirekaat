@@ -28,28 +28,7 @@ import Cosmea from "./assets/cosmea.png";
 
 const App = () => {
 
-  const [seasons, setSeasons] = useState([
-    {
-      name: "spring", 
-      flowers: ["Anemone", "Iris", "Tulp", "Roos", "Baronia"],
-      images: [Anemone, Iris, Tulip, Rose, Baronia,Anemone, Iris, Tulip, Rose], 
-    },
-    {
-      name: "summer", 
-      flowers: ["Lelie", "Fresia", "Zonnebloem", "Chrysant", "Lavendel"],
-      images: [Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia, Zonnebloem, Chrysant, Lelie, Fresia, Zonnebloem, Chrysant, Lavendel,Lelie, Fresia]
-    },
-    {
-      name: "fall", 
-      flowers: ["Dahlia", "Gerbera", "Aster", "Statice", "Chrysant"],
-      images: [Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice, Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera, Aster, Statice, Dahlia, Gerbera, Aster, Statice, Chrysant, Dahlia, Gerbera]
-    },
-    {
-      name: "winter", 
-      flowers: ["Jasmijn", "Camelia", "Kerstster", "Tijgerlelie", "Cosmea"],
-      images: [Jasmijn, Camelia, Kerstster, Tijgerlelie, Cosmea, Jasmijn, Camelia, Kerstster, Tijgerlelie]
-    }
-  ]);
+  const seasonsArray = ["spring", "summer", "fall", "winter"];
 
   const [spring, setSpring] = useState([
     {
@@ -203,13 +182,13 @@ const App = () => {
 
   const [clickedDimension, setClickedDimension] = useState("small");
 
-  const [selectedSeason, setSelectedSeason] = useState("spring");
+  const [selectedSeason, setSelectedSeason] = useState(spring);
 
   const changeColor = (color) => {
     console.log(color);
   }
 
-  const handleChangeAmount = (values) => {
+  const handleChangeAmount = (values, season) => {
     const items = values[0];
     const changedAmount = values[1]; 
     const copy = [...spring]; 
@@ -219,15 +198,6 @@ const App = () => {
     setSpring(copy);
     console.log(spring);
   }
-
-  const handleChangeSeason = (season) => {
-    const copy = [...seasons];
-    copy[seasons] = season;
-
-    setSeasons(copy);
-
-    setSelectedSeason(season);
-  } 
 
   const handleClickButton = (button) => {
     const copy = [...dimensions];
@@ -249,19 +219,15 @@ const App = () => {
 
   <section className="content">
       <article className="form">
-        <Season 
-        list= {
-          seasons.filter((season) => season.name)
-          } 
-        onChange= {(selectedSeason) => 
-          handleChangeSeason(selectedSeason)}/>
+      <Season 
+        list= { seasonsArray } 
+        onChange= {
+          (season) => setSelectedSeason(eval(season)) 
+        }
+      />
       
       <Flower 
-        list= { 
-          // seasons.filter((season) => 
-          // season.name === selectedSeason)
-          spring
-        }
+        list= { selectedSeason }
         total= { 
           dimensions.filter((dimension) => 
           dimension.name === clickedDimension)
@@ -273,12 +239,6 @@ const App = () => {
           (value) => changeColor(value)
         }
       />
-
-      {/* color picker om de vier verschillende kleuren te bepalen van het boeket, op basis van de gekozen kleuren, veranderen de kleuren onderaan */}
-      {/* < Color 
-        value={colors} 
-        onValueChange={(value) => changeColor(value)}
-      /> */ }
        
       </article>
       
@@ -295,16 +255,12 @@ const App = () => {
         />
 
         <Bouquet 
-          list= {
-            seasons.filter((season) => 
-              season.name === selectedSeason)
-            } 
+          list= { selectedSeason } 
           item= {
             dimensions.filter((dimension) => 
             dimension.name === clickedDimension)
           }
         />
-
       </article> 
     </section>
   </div>
