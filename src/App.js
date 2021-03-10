@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Season from "./components/Season";
 import Flower from "./components/Flower";
-import Color from "./components/Color";
+// import Color from "./components/Color";
 import Buttons from "./components/Buttons";
 import Bouquet from "./components/Bouquet";
 
@@ -56,7 +56,7 @@ const App = () => {
       name: "Anemone", 
       image: Anemone, 
       color: "#FAA3FF", 
-      amount: 2
+      amount: 0
     },
     {
       name: "Iris", 
@@ -107,16 +107,22 @@ const App = () => {
   const [selectedSeason, setSelectedSeason] = useState("spring");
 
   const changeColor = (color) => {
-    const copy = [...selectedSeason];
-    // onst index = copy.findIndex((check) => check.name === selectedSeason);
-    console.log(copy);
     console.log(color);
   }
 
   const handleChangeAmount = (values) => {
-    console.log(`amount: ${values[0]}`);
-    console.log(`flower: ${values[1]}`);
+    // console.log(`amount: ${values[0]}`);
+    // console.log(`flower: ${values[1]}`);
+    // const flower = values[1];
+    // let changedAmount = values[0];
+    const items = values[0];
+    const changedAmount = values[1]; 
+    const copy = [...spring]; 
+    const index = copy.findIndex((check) => check.name === items.name); 
+    copy[index] = {...items, amount: changedAmount};
 
+    setSpring(copy);
+    console.log(spring);
   }
 
   const handleChangeSeason = (season) => {
