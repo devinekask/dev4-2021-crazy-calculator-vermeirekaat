@@ -30,137 +30,137 @@ const App = () => {
 
   const seasonsArray = ["spring", "summer", "fall", "winter"];
 
-  const [spring, setSpring] = useState([
-    {
-      name: "Anemone", 
-      image: Anemone, 
-      color: "#FAA3FF", 
-      amount: 0
-    },
-    {
-      name: "Iris", 
-      image: Iris, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Tulp", 
-      image: Tulip, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Rose", 
-      image: Rose, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Baronia", 
-      image: Baronia, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-  ]);
+  const [seasons, setSeasons] = useState({
+    spring: [
+      {
+        name: "Anemone", 
+        image: Anemone, 
+        color: "#FAA3FF", 
+        amount: 0
+      },
+      {
+        name: "Iris", 
+        image: Iris, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Tulp", 
+        image: Tulip, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Rose", 
+        image: Rose, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Baronia", 
+        image: Baronia, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+    ],
+    summer: [
+      {
+        name: "Lilie", 
+        image: Lelie, 
+        color: "#FAA3FF", 
+        amount: 0
+      },
+      {
+        name: "Fresia", 
+        image: Fresia, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Zonnebloem", 
+        image: Zonnebloem, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Chrysant", 
+        image: Chrysant, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Lavendel", 
+        image: Lavendel, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+    ],
+    fall: [
+      {
+        name: "Dahlia", 
+        image: Dahlia, 
+        color: "#FAA3FF", 
+        amount: 0
+      },
+      {
+        name: "Gerbera", 
+        image: Gerbera, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Aster", 
+        image: Aster, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Statice", 
+        image: Statice, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Chrysant", 
+        image: Chrysant, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+    ],
+    winter: [
+      {
+        name: "Jasmijn", 
+        image: Jasmijn, 
+        color: "#FAA3FF", 
+        amount: 0
+      },
+      {
+        name: "Camelia", 
+        image: Camelia, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Kerstster", 
+        image: Kerstster, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Tijgerlelie", 
+        image: Tijgerlelie, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+      {
+        name: "Cosmea", 
+        image: Cosmea, 
+        color: "#FAA3FF", 
+        amount: 2
+      },
+    ]
+  });
 
-  const [summer, setSummer] = useState([
-    {
-      name: "Lilie", 
-      image: Lelie, 
-      color: "#FAA3FF", 
-      amount: 0
-    },
-    {
-      name: "Fresia", 
-      image: Fresia, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Zonnebloem", 
-      image: Zonnebloem, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Chrysant", 
-      image: Chrysant, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Lavendel", 
-      image: Lavendel, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-  ]);
-
-  const [fall, setFall] = useState([
-    {
-      name: "Dahlia", 
-      image: Dahlia, 
-      color: "#FAA3FF", 
-      amount: 0
-    },
-    {
-      name: "Gerbera", 
-      image: Gerbera, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Aster", 
-      image: Aster, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Statice", 
-      image: Statice, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Chrysant", 
-      image: Chrysant, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-  ]);
-
-  const [winter, setWinter] = useState([
-    {
-      name: "Jasmijn", 
-      image: Jasmijn, 
-      color: "#FAA3FF", 
-      amount: 0
-    },
-    {
-      name: "Camelia", 
-      image: Camelia, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Kerstster", 
-      image: Kerstster, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Tijgerlelie", 
-      image: Tijgerlelie, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Cosmea", 
-      image: Cosmea, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-  ]);
 
   const [dimensions, setDimensions] = useState([
     {
@@ -182,22 +182,30 @@ const App = () => {
 
   const [clickedDimension, setClickedDimension] = useState("small");
 
-  const [selectedSeason, setSelectedSeason] = useState(spring);
+  const [selectedSeason, setSelectedSeason] = useState("spring");
+
+  const checkSeason = () => {
+    for (let check in seasons) {
+      check = selectedSeason
+      // console.log(check, seasons[check]);
+      const correctSeason = [check, seasons[check]];
+      return correctSeason;
+    }
+  }
 
   const changeColor = (color) => {
     console.log(color);
   }
 
-  const handleChangeAmount = (values, season) => {
+  // legende nodig (reference), met key-value pairs om te checken welk seizoen er is gekozen
+  const handleChangeAmount = (values) => {
     const items = values[0];
     const changedAmount = values[1]; 
-    const copy = [...spring]; 
-    const index = copy.findIndex((check) => check.name === items.name); 
-    copy[index] = {...items, amount: changedAmount};
-
-    setSpring(copy);
-    console.log(spring);
-  }
+    console.log(items, changedAmount);
+    // const copy = [...selectedSeason]; 
+    // const index = copy.findIndex((check) => check.name === items.name); 
+    // copy[index] = {...items, amount: changedAmount};
+  } 
 
   const handleClickButton = (button) => {
     const copy = [...dimensions];
@@ -222,12 +230,16 @@ const App = () => {
       <Season 
         list= { seasonsArray } 
         onChange= {
-          (season) => setSelectedSeason(eval(season)) 
+          (season) => setSelectedSeason(season)
         }
       />
       
       <Flower 
-        list= { selectedSeason }
+        list= { 
+          // seasons.filter((season) => 
+          // season === selectedSeason) 
+          checkSeason()
+        }
         total= { 
           dimensions.filter((dimension) => 
           dimension.name === clickedDimension)
@@ -237,7 +249,7 @@ const App = () => {
         }
         onColorChange= {
           (value) => changeColor(value)
-        }
+        } 
       />
        
       </article>
