@@ -180,16 +180,47 @@ const App = () => {
     }
   ]);
 
+  const [changedSeason, setChangedSeason] = useState([
+    {
+      name: "Anemone", 
+      image: Anemone, 
+      color: "#FAA3FF", 
+      amount: 0
+    },
+    {
+      name: "Iris", 
+      image: Iris, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Tulp", 
+      image: Tulip, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Rose", 
+      image: Rose, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+    {
+      name: "Baronia", 
+      image: Baronia, 
+      color: "#FAA3FF", 
+      amount: 2
+    },
+  ]);
+
   const [clickedDimension, setClickedDimension] = useState("small");
 
   const [selectedSeason, setSelectedSeason] = useState("spring");
 
-  const checkSeason = () => {
-    for (let check in seasons) {
-      check = selectedSeason
-      // console.log(check, seasons[check]);
-      const correctSeason = [check, seasons[check]];
-      return correctSeason;
+  const checkSeason = ()  => {
+    for (let check of Object.keys(seasons)) {
+      check = selectedSeason;
+      return seasons[check];
     }
   }
 
@@ -201,10 +232,20 @@ const App = () => {
   const handleChangeAmount = (values) => {
     const items = values[0];
     const changedAmount = values[1]; 
-    console.log(items, changedAmount);
-    // const copy = [...selectedSeason]; 
-    // const index = copy.findIndex((check) => check.name === items.name); 
-    // copy[index] = {...items, amount: changedAmount};
+    // console.log(items, changedAmount);
+    const copy = [...seasons[selectedSeason]]; 
+    const index = copy.findIndex((check) => check.name === items.name); 
+    copy[index] = {...items, amount: changedAmount};
+    // console.log(copy);
+    // console.log(copy[index]);
+
+    setChangedSeason(copy);
+
+    setSeasons({...seasons[selectedSeason], ...changedSeason});
+    console.log(changedSeason);
+    console.log(seasons);
+
+    // checkSeason();
   } 
 
   const handleClickButton = (button) => {
@@ -236,8 +277,6 @@ const App = () => {
       
       <Flower 
         list= { 
-          // seasons.filter((season) => 
-          // season === selectedSeason) 
           checkSeason()
         }
         total= { 
