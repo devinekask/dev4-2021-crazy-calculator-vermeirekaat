@@ -180,72 +180,25 @@ const App = () => {
     }
   ]);
 
-  const [changedSeason, setChangedSeason] = useState([
-    {
-      name: "Anemone", 
-      image: Anemone, 
-      color: "#FAA3FF", 
-      amount: 0
-    },
-    {
-      name: "Iris", 
-      image: Iris, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Tulp", 
-      image: Tulip, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Rose", 
-      image: Rose, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-    {
-      name: "Baronia", 
-      image: Baronia, 
-      color: "#FAA3FF", 
-      amount: 2
-    },
-  ]);
-
   const [clickedDimension, setClickedDimension] = useState("small");
 
   const [selectedSeason, setSelectedSeason] = useState("spring");
-
-  const checkSeason = ()  => {
-    for (let check of Object.keys(seasons)) {
-      check = selectedSeason;
-      return seasons[check];
-    }
-  }
 
   const changeColor = (color) => {
     console.log(color);
   }
 
-  // legende nodig (reference), met key-value pairs om te checken welk seizoen er is gekozen
-  const handleChangeAmount = (values) => {
-    const items = values[0];
-    const changedAmount = values[1]; 
-    // console.log(items, changedAmount);
+  const handleChangeAmount = async (values) => {
+    const items = await values[0];
+    const changedAmount = await values[1]; 
+
     const copy = [...seasons[selectedSeason]]; 
     const index = copy.findIndex((check) => check.name === items.name); 
-    copy[index] = {...items, amount: changedAmount};
-    // console.log(copy);
-    // console.log(copy[index]);
+    copy[index] = {...items, amount: Number(changedAmount)};
 
-    setChangedSeason(copy);
-
-    setSeasons({...seasons[selectedSeason], ...changedSeason});
-    console.log(changedSeason);
+    setSeasons([...seasons[selectedSeason], ...copy]);
+ 
     console.log(seasons);
-
-    // checkSeason();
   } 
 
   const handleClickButton = (button) => {
@@ -277,7 +230,7 @@ const App = () => {
       
       <Flower 
         list= { 
-          checkSeason()
+          seasons[selectedSeason]
         }
         total= { 
           dimensions.filter((dimension) => 
