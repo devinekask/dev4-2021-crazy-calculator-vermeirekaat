@@ -1,7 +1,6 @@
 const Flower = ({ list, total, onColorChange, onAmountChange }) => {
 
   const amount = total[0];
-  console.log(list);
 
   const changeAmount = (e, flower) => {
     const amount = e.target.value;
@@ -12,17 +11,23 @@ const Flower = ({ list, total, onColorChange, onAmountChange }) => {
   }
 
   const calculateAmount = () => {
-    const totalAmount = [];
+    const numbers = [];
     list.map((item) => (
-      totalAmount.push(item.amount)
+      numbers.push(item.amount)
     ));
-    return totalAmount;
-    // console.log(totalAmount);
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const totalAmount = numbers.reduce(reducer);
+    if (totalAmount >= amount.max) {
+      return `You exceeded your maximum amount of flowers`;
+    } else {
+      return `Amount of Flowers: ${totalAmount}`;
+    }
   }
 
     return (
       <form className="form__input">
-      <p className="subtitle">Amount of Flowers: {calculateAmount()}</p>
+        <p>You can choose {amount.max} flowers</p>
+      <p className="subtitle">{calculateAmount()}</p>
       {
         list.map((flower) => (
           <>

@@ -42,25 +42,25 @@ const App = () => {
         name: "Iris", 
         image: Iris, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Tulp", 
         image: Tulip, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Rose", 
         image: Rose, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Baronia", 
         image: Baronia, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
     ],
     summer: [
@@ -74,25 +74,25 @@ const App = () => {
         name: "Fresia", 
         image: Fresia, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Zonnebloem", 
         image: Zonnebloem, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Chrysant", 
         image: Chrysant, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Lavendel", 
         image: Lavendel, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
     ],
     fall: [
@@ -106,25 +106,25 @@ const App = () => {
         name: "Gerbera", 
         image: Gerbera, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Aster", 
         image: Aster, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Statice", 
         image: Statice, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Hebe", 
         image: Hebe, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
     ],
     winter: [
@@ -138,25 +138,25 @@ const App = () => {
         name: "Camelia", 
         image: Camelia, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Kerstster", 
         image: Kerstster, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Tijgerlelie", 
         image: Tijgerlelie, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
       {
         name: "Cosmea", 
         image: Cosmea, 
         color: "#FAA3FF", 
-        amount: 2
+        amount: 0
       },
     ]
   });
@@ -191,9 +191,6 @@ const App = () => {
   const handleChangeAmount = (values) => {
     const items = values[0];
     const changedAmount = values[1]; 
-    // items = name, image, color, amount
-    console.log(items);
-
     const copy = [...seasons[selectedSeason]]; 
     const index = copy.findIndex((check) => check.name === items.name); 
     const itemCopy = {...items, amount: Number(changedAmount)};
@@ -202,9 +199,6 @@ const App = () => {
     const newState = {...seasons, [selectedSeason]: copy};
 
     setSeasons(newState);
-    // return newState;
- 
-    console.log(seasons);
   } 
 
   const handleClickButton = (button) => {
