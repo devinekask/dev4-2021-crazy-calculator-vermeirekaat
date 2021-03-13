@@ -184,6 +184,8 @@ const App = () => {
 
   const [selectedSeason, setSelectedSeason] = useState("spring");
 
+  const [arrayImages, setArrayImages] = useState([]);
+
   const changeColor = (color) => {
     console.log(color);
   }
@@ -199,7 +201,20 @@ const App = () => {
     const newState = {...seasons, [selectedSeason]: copy};
 
     setSeasons(newState);
+
+    getArrayImages(items);
   } 
+
+  const getArrayImages = (items) => {
+    const amount = items.amount;
+    const newArray = []
+
+    for (let i = 0; i < amount; i++) {
+      newArray.push(items.image);
+    }
+
+    setArrayImages(newArray);
+  }
 
   const handleClickButton = (button) => {
     const copy = [...dimensions];
@@ -259,7 +274,7 @@ const App = () => {
         />
 
         <Bouquet 
-          list= { selectedSeason } 
+          list= { arrayImages } 
           item= {
             dimensions.filter((dimension) => 
             dimension.name === clickedDimension)
