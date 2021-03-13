@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import Season from "./components/Season";
 import Flower from "./components/Flower";
-// import Color from "./components/Color";
 import Buttons from "./components/Buttons";
 import Bouquet from "./components/Bouquet";
 
@@ -20,6 +19,7 @@ import Dahlia from "./assets/dahlia.png";
 import Gerbera from "./assets/gerbera.png";
 import Aster from "./assets/aster.png";
 import Statice from "./assets/statice.png";
+import Hebe from "./assets/hebe.png";
 import Jasmijn from "./assets/jasmijn.png";
 import Camelia from "./assets/camelia.png";
 import Kerstster from "./assets/kerstster.png";
@@ -121,8 +121,8 @@ const App = () => {
         amount: 2
       },
       {
-        name: "Chrysant", 
-        image: Chrysant, 
+        name: "Hebe", 
+        image: Hebe, 
         color: "#FAA3FF", 
         amount: 2
       },
@@ -188,15 +188,21 @@ const App = () => {
     console.log(color);
   }
 
-  const handleChangeAmount = async (values) => {
-    const items = await values[0];
-    const changedAmount = await values[1]; 
+  const handleChangeAmount = (values) => {
+    const items = values[0];
+    const changedAmount = values[1]; 
+    // items = name, image, color, amount
+    console.log(items);
 
     const copy = [...seasons[selectedSeason]]; 
     const index = copy.findIndex((check) => check.name === items.name); 
-    copy[index] = {...items, amount: Number(changedAmount)};
+    const itemCopy = {...items, amount: Number(changedAmount)};
 
-    setSeasons([...seasons[selectedSeason], ...copy]);
+    copy[index] = itemCopy;
+    const newState = {...seasons, [selectedSeason]: copy};
+
+    setSeasons(newState);
+    // return newState;
  
     console.log(seasons);
   } 
