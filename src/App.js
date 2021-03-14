@@ -186,11 +186,23 @@ const App = () => {
 
   const [arrayImages, setArrayImages] = useState([]);
 
-  const changeColor = (color) => {
-    console.log(color);
+  const changeColor = (values) => {
+    const items = values[0];
+    const changedColor = values[1];
+    const copy = [...seasons[selectedSeason]];
+    const index = copy.findIndex((check) => check.name === items.name);
+    const itemCopy = {...items, color: changedColor};
+
+    copy[index] = itemCopy;
+    const newState = {...seasons, [selectedSeason]: copy};
+    console.log(newState);
+
+    setSeasons(newState);
+    // console.log(seasons);
+    getArrayImages(items);
   }
 
-  const handleChangeAmount = (values) => {
+  const handleChangeAmount = async (values) => {
     const items = values[0];
     const changedAmount = values[1]; 
     const copy = [...seasons[selectedSeason]]; 
@@ -200,9 +212,8 @@ const App = () => {
     copy[index] = itemCopy;
     const newState = {...seasons, [selectedSeason]: copy};
 
-    setSeasons(newState);
-
     getArrayImages(items);
+    setSeasons(newState);
   } 
 
   const getArrayImages = (items) => {
@@ -210,7 +221,7 @@ const App = () => {
     const newArray = []
 
     for (let i = 0; i < amount; i++) {
-      newArray.push(items.image);
+      newArray.push({name: items.name, image: items.image, color: items.color});
     }
 
     setArrayImages(newArray);
@@ -279,6 +290,7 @@ const App = () => {
             dimensions.filter((dimension) => 
             dimension.name === clickedDimension)
           }
+          color= { seasons[selectedSeason] }
         />
       </article> 
     </section>

@@ -18,10 +18,16 @@ const Flower = ({ list, total, onColorChange, onAmountChange }) => {
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const totalAmount = numbers.reduce(reducer);
     if (totalAmount >= amount.max) {
-      return `You exceeded your maximum amount of flowers`;
+      return `You exceeded your maximum amount of flowers (${totalAmount})`;
     } else {
       return `Amount of Flowers: ${totalAmount}`;
     }
+  }
+
+  const changeColor = (e, flower) => {
+    const amount = e.target.value;
+    const values = [flower, amount];
+    onColorChange(values);
   }
 
     return (
@@ -35,7 +41,7 @@ const Flower = ({ list, total, onColorChange, onAmountChange }) => {
               <input onChange={(e) => changeAmount(e, flower) } type="number" name={flower.name} min="0" defaultValue={flower.amount}></input>   
           </label>   
            <label className="label">Color {flower.color}
-            <input onChange={(e) => onColorChange(e.target.value)} type="color" defaultValue={flower.color}></input>
+            <input onChange={(e) => changeColor(e, flower)} type="color" defaultValue={flower.color}></input>
          </label>
          </>
         ))
