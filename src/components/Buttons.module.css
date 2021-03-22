@@ -1,0 +1,22 @@
+@value values: "../style/values.module.css";
+@value primaryColor, secondaryColor, margin from values;
+
+.button {
+    border: secondaryColor .2rem solid; 
+    background-color: primaryColor;
+    text-transform: uppercase;
+    width: 8rem;
+    height: 3.5rem;
+}
+
+.button:active {
+    border: primaryColor .2rem solid; 
+    background-color: secondaryColor;
+    color: white;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}

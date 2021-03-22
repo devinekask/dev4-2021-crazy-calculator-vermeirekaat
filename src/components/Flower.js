@@ -1,3 +1,6 @@
+import styles from "./Flower.module.css";
+import "../style/input.module.css";
+
 const Flower = ({ list, total, onColorChange, onAmountChange }) => {
 
   const amount = total[0];
@@ -31,16 +34,16 @@ const Flower = ({ list, total, onColorChange, onAmountChange }) => {
   }
 
     return (
-      <form className="form__input">
+      <form>
         <p>Je kan {amount.max} bloemen kiezen.</p>
-      <p className="subtitle">{calculateAmount()}</p>
+      <p className={styles.subtitle}>{calculateAmount()}</p>
       {
         list.map((flower) => (
           <>
-          <label className="label">{flower.name}
+          <label className={styles.label}>{flower.name}
               <input onChange={(e) => changeAmount(e, flower) } type="number" name={flower.name} min="0" defaultValue={flower.amount}></input>   
           </label>   
-           <label className="label">Kleur {flower.color}
+           <label className={styles.label}>Kleur {flower.color}
             <input onChange={(e) => changeColor(e, flower)} type="color" defaultValue={flower.color}></input>
          </label>
          </>

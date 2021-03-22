@@ -1,0 +1,29 @@
+@value values: "./style/values.module.css";
+@value titleFont, sloganFont, margin, primaryColor from values;
+
+.hidden {
+    display: none;
+}
+
+.header {
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: titleFont;
+    /* font-size: 2.5rem; */
+    text-align: center;
+    color: primaryColor; 
+    /* color: pink; */
+    font-weight: bold;
+    margin-top: margin;
+}
+
+.slogan {
+    margin: margin;
+    font-size: sloganFont;
+    font-style: italic;
+    text-align: center;
+}

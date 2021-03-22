@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
@@ -8,10 +8,10 @@ const App = () => {
 
   return (
     <>
-      <p className="hidden">Crazy Calculator</p>
-      <section className="header">
-        <h2 className="title">BloemBoeket</h2>
-        <p className="slogan">Stel zelf je bloemboeket samen, perfect voor elke gelegenheid!</p>
+      <p className={styles.hidden}>Crazy Calculator</p>
+      <section className={styles.header}>
+        <h2 className={styles.title}>BloemBoeket</h2>
+        <p className={styles.slogan}>Stel zelf je bloemboeket samen, perfect voor elke gelegenheid!</p>
       </section>
 
     <BrowserRouter>

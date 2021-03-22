@@ -1,0 +1,13 @@
+@value values: "../style/values.module.css";
+@value subtitleFont, bodyFont, margin, secondaryColor from values;
+
+.subtitle {
+    font-size: subtitleFont;
+    color: secondaryColor;
+    font-style: italic;
+    margin: margin;
+}
+
+.label {
+    font-size: bodyFont;
+}

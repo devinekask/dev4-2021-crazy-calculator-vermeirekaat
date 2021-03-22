@@ -1,0 +1,17 @@
+@value values: "../style/values.module.css";
+@value primaryColor from values;
+
+.content {
+    composes: grid from "../style/layouts.module.css";
+}
+
+.form {
+    background-color: primaryColor;
+    padding: 2.5rem;
+    grid-column: 1 / span 2;
+}
+
+.bouquet {
+    grid-row: 1;
+    grid-column: 3;
+}

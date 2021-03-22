@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styles from "./Home.module.css";
 
 import Season from "../components/Season";
 import Flower from "../components/Flower";
@@ -252,8 +253,8 @@ const Home = () => {
     }
 
     return (
-        <section className="content">
-        <article className="form">
+      <section className={styles.content}>
+        <article className={styles.form}>
         <Season 
           list= { seasonsArray } 
           onChange= {
@@ -279,7 +280,7 @@ const Home = () => {
          
         </article>
         
-        <article className="bouquet">
+        <article className={styles.bouquet}>
   
           <Buttons 
           sizes= {
@@ -300,7 +301,7 @@ const Home = () => {
             color= { seasons[selectedSeason] }
           />
         </article> 
-      </section>
+    </section>
     )
 };
 

@@ -1,3 +1,6 @@
+import styles from "./Season.module.css";
+import "../style/input.module.css";
+
 const Season = ({ list, onChange }) => {
 
     const handleSelectSeason = e => {
@@ -7,8 +10,8 @@ const Season = ({ list, onChange }) => {
 
     return (
         <>
-            <h2 className="hidden">Formulier</h2>
-                <label className="label" htmlFor="season">Selecteer het gepaste seizoen</label>
+            <h2 className={styles.hidden}>Formulier</h2>
+                <label >Selecteer het gepaste seizoen</label>
                     <select onChange={handleSelectSeason}>
                         {list.map((season) => (
                             <option key={season.index} name="season" value={season}>{season}</option>

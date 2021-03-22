@@ -1,3 +1,5 @@
+import styles from "./Buttons.module.css";
+
 const Buttons = ({ sizes, onClick }) => {
 
     const handleClickButton = e => {
@@ -5,9 +7,9 @@ const Buttons = ({ sizes, onClick }) => {
         onClick(clicked);
     }
     return (
-        <div className="button__wrapper">
+        <div className={styles.buttonWrapper}>
             {sizes.map((size) => (
-                <input onClick={(e) => handleClickButton(e)} className="button" type="button" value={size.name} key={sizes.index}></input>
+                <input onClick={(e) => handleClickButton(e)} className={styles.button} type="button" value={size.name} key={sizes.index}></input>
             ))}
         </div>
         
