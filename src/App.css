@@ -63,7 +63,7 @@ box-sizing: border-box;
     opacity: 0.6;
 }
 
-.small {
+.klein {
     border-radius: 100%;
     border: .3rem solid;
     margin: 5rem;
@@ -76,7 +76,7 @@ box-sizing: border-box;
     height: 10rem;
 }
 
-.medium {
+.gemiddeld {
     border-radius: 100%;
     border: .3rem solid;
     margin: 5rem;
@@ -89,7 +89,7 @@ box-sizing: border-box;
     height: 20rem;
 }
 
-.large {
+.groot {
     border-radius: 100%;
     border: .3rem solid;
     margin: 5rem;

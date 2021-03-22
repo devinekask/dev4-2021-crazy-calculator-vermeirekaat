@@ -255,7 +255,7 @@ const App = () => {
       <p className="hidden">Crazy Calculator</p>
       <section className="header">
         <h2 className="title">BloemBoeket</h2>
-        <p className="slogan">Stel zelf je bloem boeket samen, perfect voor elke gelegenheid!</p>
+        <p className="slogan">Stel zelf je bloemboeket samen, perfect voor elke gelegenheid!</p>
       </section>
 
   <section className="content">
