@@ -3,7 +3,7 @@ const Bouquet = ({ item, list }) => {
 
     return (
         <section>
-        <h3 className="subtitle">Bouquet {size.name}</h3>
+        <h3 className="subtitle">Boeket {size.name}</h3>
            <div className={size.name}>
             {
             list.map((flower) => (
