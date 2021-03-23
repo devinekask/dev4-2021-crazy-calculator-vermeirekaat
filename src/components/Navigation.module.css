@@ -1,5 +1,5 @@
 @value values: "../style/values.module.css";
-@value title, primaryColor, secondaryColor, marginLarge from values;
+@value subtitleFont, primaryColor, secondaryColor, marginLarge from values;
 
 .navigation {
   display: flex;
@@ -11,7 +11,7 @@
 
 .link {
   text-decoration: none;
-  font-size: title;
+  font-size: subtitleFont;
   padding: 0.5rem;
   color: secondaryColor;
 }

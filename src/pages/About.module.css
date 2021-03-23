@@ -1,0 +1,26 @@
+@value values: "../style/values.module.css";
+@value titleFont, subtitleFont, bodyFont, primaryColor, secondaryColor, margin, marginLarge from values;
+
+.poem {
+    margin-left: 50%;
+}
+
+.title {
+    margin-bottom: marginLarge;
+    color: secondaryColor;
+    font-size: titleFont;
+}
+
+.part {
+    margin-bottom: margin;
+    margin-left: marginLarge;
+}
+
+.part span {
+    color: primaryColor;
+}
+
+.writer {
+    font-size: subtitleFont;
+    color: secondaryColor;
+}
