@@ -185,11 +185,16 @@ const Home = () => {
     const [selectedSeason, setSelectedSeason] = useState("lente");
   
     const [arrayImages, setArrayImages] = useState([]);
+
+    const handleSaveButton = (bouquet) => {
+      console.log(bouquet);
+    }
   
     const handleChangeSeason = (season) => {
       setSelectedSeason(season);
       
-      setSeasons({...seasons, ...seasons[season]});
+      setSeasons({...seasons});
+      console.log(seasons);
       getArrayImages(seasons[season]);
     }
   
@@ -297,6 +302,9 @@ const Home = () => {
               dimension.name === clickedDimension)
             }
             color= { seasons[selectedSeason] }
+            onSave= {
+              (newBouquet) => handleSaveButton(newBouquet)
+            }
           />
         </article> 
     </section>

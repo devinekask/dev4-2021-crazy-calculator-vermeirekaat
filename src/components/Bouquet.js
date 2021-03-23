@@ -1,7 +1,13 @@
 import styles from "./Bouquet.module.css";
 
-const Bouquet = ({ item, list }) => {
+const Bouquet = ({ item, list, onSave }) => {
     const size = item[0];
+
+    const handleOnSave = (list, size) => {
+        const values = [list, size.name];
+        console.log(values);
+        onSave(values);
+    }
 
     return (
         <section>
@@ -15,6 +21,7 @@ const Bouquet = ({ item, list }) => {
                 ))    
             }
            </div>
+           <input onClick={() => handleOnSave(list, size)} className={styles.button} type="button"  value="Boeket opslaan"></input>
        </section>
     );
 };
