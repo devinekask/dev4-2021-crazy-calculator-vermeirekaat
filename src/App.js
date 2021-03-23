@@ -1,6 +1,6 @@
 import styles from "./App.module.css";
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
 
@@ -14,7 +14,6 @@ const App = () => {
         <p className={styles.slogan}>Stel zelf je bloemboeket samen, perfect voor elke gelegenheid!</p>
       </section>
 
-    <BrowserRouter>
       <Switch>
         <Route path="/about">
           <About/>
@@ -26,8 +25,6 @@ const App = () => {
           <p>Not found</p>
         </Route>
       </Switch>
-    </BrowserRouter>
-      
     </>   
   );
 };
