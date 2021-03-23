@@ -2,8 +2,6 @@ import styles from "./Bouquet.module.css";
 
 const Bouquet = ({ item, list }) => {
     const size = item[0];
-    const sizeName = size.name;
-    console.log(sizeName);
 
     return (
         <section>

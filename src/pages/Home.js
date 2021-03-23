@@ -28,7 +28,6 @@ import Kerstster from "../assets/kerstster.png";
 import Tijgerlelie from "../assets/tijgerlelie.png";
 import Cosmea from "../assets/cosmea.png";
 
-
 const Home = () => {
     const seasonsArray = ["lente", "zomer", "herfst", "winter"];
 
@@ -163,7 +162,6 @@ const Home = () => {
       ]
     });
   
-  
     const [dimensions, setDimensions] = useState([
       {
         name: "klein", 
@@ -195,9 +193,9 @@ const Home = () => {
       getArrayImages(seasons[season]);
     }
   
-    const handleChangeColor = async (values) => {
+    const handleChangeColor = (values) => {
       const items = values[0];
-      const changedColor = values[1];
+      const changedColor = values[1]; 
       const copy = [...seasons[selectedSeason]];
       const index = copy.findIndex((check) => check.name === items.name);
       const itemCopy = {...items, color: changedColor};
@@ -205,8 +203,20 @@ const Home = () => {
       copy[index] = itemCopy;
       const newState = {...seasons, [selectedSeason]: copy};
   
-      getArrayImages(items);
+      // getArrayImages(values);
       setSeasons(newState);
+      // console.log(seasons);
+
+      const copyArray = [...arrayImages]; 
+      const indexArray = copyArray.filter((check) => check.name === items.name);
+      console.log(indexArray);
+
+      const itemCopyArray = {...items, color: changedColor};
+      console.log(itemCopyArray);
+      copyArray[indexArray] = itemCopyArray;
+      
+      setArrayImages(copyArray);
+      console.log(arrayImages);
     }
   
     const handleChangeAmount = (values) => {
@@ -224,23 +234,11 @@ const Home = () => {
     } 
   
     const getArrayImages = (items) => {
-      const amount = items.amount;
-      const newArray = []
-  
-      // const copy = [...arrayImages];
-      // copy[arrayImages] = amount;
-  
-  
-      /* for (let i = 0; i < amount; i++) {
-        const newItem = {name: items.name, image: items.image, color: items.color};
-        copy[arrayImages] = newItem;
-      }*/ 
-  
-      for (let i = 0; i < amount; i++) {
-        newArray.push({name: items.name, image: items.image, color: items.color})
-      }
-      setArrayImages(newArray);
-      // console.log(arrayImages);
+      const copy = [...arrayImages];
+
+      copy.push({name: items.name, image: items.image, color: items.color});
+
+      setArrayImages(copy);     
     }
   
     const handleClickButton = (button) => {
