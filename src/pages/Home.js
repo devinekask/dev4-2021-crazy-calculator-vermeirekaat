@@ -228,8 +228,6 @@ const Home = () => {
       const button = dimensions.filter((dimension) => dimension.name === clickedDimension)
       const maxAmount = button[0].max;
 
-      console.log(maxAmount);
-
       const copy = [...seasons[selectedSeason]]; 
       const index = copy.findIndex((check) => check.name === items.name); 
       const itemCopy = {...items, amount: Number(changedAmount)};
@@ -237,12 +235,17 @@ const Home = () => {
       copy[index] = itemCopy;
       const newState = {...seasons, [selectedSeason]: copy};
 
-      if (totalAmount <= maxAmount) {
-        console.log('kleiner');
+      const currentAmount = copy[index].amount + Number(1);
+
+      /* if (totalAmount <= maxAmount && currentAmount > totalAmount) {
         getArrayImages(items);
-      }
+      } 
+      if (currentAmount < totalAmount) {
+        arrayImages.pop();
+      }*/ 
+      
   
-      // getArrayImages(items);
+      getArrayImages(items);
       setSeasons(newState);
     } 
   
