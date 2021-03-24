@@ -214,27 +214,35 @@ const Home = () => {
 
       const copyArray = [...arrayImages]; 
       const indexArray = copyArray.filter((check) => check.name === items.name);
-      console.log(indexArray);
-
       const itemCopyArray = {...items, color: changedColor};
-      console.log(itemCopyArray);
       copyArray[indexArray] = itemCopyArray;
       
       setArrayImages(copyArray);
-      console.log(arrayImages);
     }
   
     const handleChangeAmount = (values) => {
       const items = values[0];
       const changedAmount = values[1]; 
+      const totalAmount = values[2] + Number(1);
+
+      const button = dimensions.filter((dimension) => dimension.name === clickedDimension)
+      const maxAmount = button[0].max;
+
+      console.log(maxAmount);
+
       const copy = [...seasons[selectedSeason]]; 
       const index = copy.findIndex((check) => check.name === items.name); 
       const itemCopy = {...items, amount: Number(changedAmount)};
   
       copy[index] = itemCopy;
       const newState = {...seasons, [selectedSeason]: copy};
+
+      if (totalAmount <= maxAmount) {
+        console.log('kleiner');
+        getArrayImages(items);
+      }
   
-      getArrayImages(items);
+      // getArrayImages(items);
       setSeasons(newState);
     } 
   
