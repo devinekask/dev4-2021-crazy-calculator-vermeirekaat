@@ -223,7 +223,7 @@ const Home = () => {
     const handleChangeAmount = (values) => {
       const items = values[0];
       const changedAmount = values[1]; 
-      const totalAmount = values[2] + Number(1);
+      const totalAmount = values[2] + 1;
 
       const button = dimensions.filter((dimension) => dimension.name === clickedDimension)
       const maxAmount = button[0].max;
@@ -231,21 +231,26 @@ const Home = () => {
       const copy = [...seasons[selectedSeason]]; 
       const index = copy.findIndex((check) => check.name === items.name); 
       const itemCopy = {...items, amount: Number(changedAmount)};
-  
+
+      const test = seasons[selectedSeason];
+      const previousAmount = test[index].amount;
+
       copy[index] = itemCopy;
       const newState = {...seasons, [selectedSeason]: copy};
 
-      const currentAmount = copy[index].amount + Number(1);
-
-      if (totalAmount <= maxAmount && currentAmount > totalAmount) {
+      if (previousAmount > changedAmount) {
+        const name = copy[index].name;
+        const array = [...arrayImages];
+        const searchName = array.findIndex((check) => check.name === name);
+        arrayImages.splice(searchName, 1);
+      }
+      if (totalAmount > maxAmount && previousAmount < changedAmount) {
+        return null;
+      }
+      if (totalAmount <= maxAmount && previousAmount < changedAmount) {
         getArrayImages(items);
       } 
-      if (currentAmount < totalAmount) {
-        arrayImages.pop();
-      }
-      
-  
-      getArrayImages(items);
+     
       setSeasons(newState);
     } 
   
