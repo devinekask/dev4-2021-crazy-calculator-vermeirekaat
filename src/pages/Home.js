@@ -195,8 +195,7 @@ const Home = () => {
       
       setSeasons({...seasons});
       console.log(seasons);
-      getArrayImages(seasons[season]);
-      window.location.reload(false);
+      getArrayImages(seasons[season]);    
     }
   
     const handleChangeColor = (values) => {
