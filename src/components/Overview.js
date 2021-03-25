@@ -1,27 +1,28 @@
 import styles from "./Overview.module.css";
 
 const Overview = ({ list, size }) => {
+
     console.log(list);
-    
+    const newList = [...list];
+
     if(list.length <= 0) {
         return (
             <div>
                 <h2 className={styles.subtitle}>Mijn Boeketten</h2>
-                <p>Je hebt nog geen boeketten opgeslagen.</p>
+                <p className={styles.info}>Je hebt nog geen boeketten opgeslagen.</p>
             </div>         
         )
     }
     if (list.length === 1) {  
-        const flowers = list[0];
+        const flowers = newList[0];
         return (
             <>
-                 <h2 className={styles.subtitle}>Mijn Boeketten</h2>
-            <div className={styles[size.name]}>
-               
+            <h2 className={styles.subtitle}>Mijn Boeketten</h2>
+            <div className={styles.klein}>
                {
                flowers.map((flower) => (
                    <div className={styles.overlay} style={{backgroundColor: flower.color}}>
-                       <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width={size.number}></img>
+                       <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width="50"></img>
                    </div>
                    ))
                }
@@ -34,16 +35,19 @@ const Overview = ({ list, size }) => {
         return (
             <>
             <h2 className={styles.subtitle}>Mijn Boeketten</h2>
-                 {list.map((flowers) => (
-                    <div className={styles[size.name]}>
+                <div className={styles.overview}>
+
+                 {newList.map((flowers) => (
+                    <div className={styles.klein}>        
                     {flowers.map((flower) => (
                         <div className={styles.overlay} style={{backgroundColor: flower.color}}>
-                            <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width={size.number}></img>
+                            <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width="50"></img>
                         </div>
                         ))}
                     </div>
                 ))}
-            </>    
+            </div>   
+            </> 
         )
     }
 

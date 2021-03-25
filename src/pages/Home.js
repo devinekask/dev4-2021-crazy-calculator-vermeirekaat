@@ -6,7 +6,6 @@ import Season from "../components/Season";
 import Flower from "../components/Flower";
 import Buttons from "../components/Buttons";
 import Bouquet from "../components/Bouquet";
-import Overview from "../components/Overview";
 
 import Anemone from "../assets/anemone.png";
 import Baronia from "../assets/baronia.png";

@@ -8,6 +8,10 @@
     margin: margin;
 }
 
+.info {
+    margin: margin;
+}
+
 .overlay {
     width: 100%;
     height: 100%;
@@ -18,6 +22,15 @@
 .image {
     object-fit: cover;
     opacity: 0.6;
+}
+
+.overview {
+    display: grid; 
+    grid-template-columns: repeat(2, 50%);
+}
+
+.name {
+    text-align: center;
 }
 
 .klein {

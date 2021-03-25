@@ -14,12 +14,6 @@ const Bouquet = ({ item, list }) => {
       setBouquetList(copy);
     }
 
-    /* const handleOnSave = (list, size) => {
-        const values = [list, size.name];
-        console.log(values);
-        onSave(values);
-    }*/
-
     return (
         <section>
         <h3 className={styles.subtitle}>Boeket {size.name}</h3>
