@@ -196,6 +196,7 @@ const Home = () => {
       setSeasons({...seasons});
       console.log(seasons);
       getArrayImages(seasons[season]);
+      window.location.reload(false);
     }
   
     const handleChangeColor = (values) => {
@@ -237,12 +238,12 @@ const Home = () => {
 
       const currentAmount = copy[index].amount + Number(1);
 
-      /* if (totalAmount <= maxAmount && currentAmount > totalAmount) {
+      if (totalAmount <= maxAmount && currentAmount > totalAmount) {
         getArrayImages(items);
       } 
       if (currentAmount < totalAmount) {
         arrayImages.pop();
-      }*/ 
+      }
       
   
       getArrayImages(items);
