@@ -1,0 +1,64 @@
+@value values: "../style/values.module.css";
+@value subtitleFont, bodyFont, margin, primaryColor, secondaryColor from values;
+
+.subtitle {
+    font-size: subtitleFont;
+    color: secondaryColor;
+    font-style: italic;
+    margin: margin;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 50%;
+}
+
+.image {
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.klein {
+    composes: boeket from "../style/circles.module.css";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    width: 10rem;
+    height: 10rem;
+}
+
+.gemiddeld {
+    composes: boeket from "../style/circles.module.css";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    width: 20rem;
+    height: 20rem;
+}
+
+.groot {
+    composes: boeket from "../style/circles.module.css";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    width: 35rem;
+    height: 35rem;
+}
+
+.button {
+    border: primaryColor .2rem solid; 
+    background-color: secondaryColor;
+    color: white;
+    text-transform: uppercase;
+    width: 10rem;
+    height: 3.5rem;
+    margin: margin;
+}
+
+.button:active {
+    border: secondaryColor .2rem solid; 
+    background-color: primaryColor;
+    color: white;
+}

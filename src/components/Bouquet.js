@@ -1,13 +1,24 @@
 import styles from "./Bouquet.module.css";
+import { useState } from "react";
+import Overview from "./Overview";
 
-const Bouquet = ({ item, list, onSave }) => {
+const Bouquet = ({ item, list }) => {
     const size = item[0];
 
-    const handleOnSave = (list, size) => {
+    const [bouquetList, setBouquetList] = useState([]);
+
+    const handleOnSave = (bouquet) => {
+      const copy = [...bouquetList];
+      copy.push(bouquet);
+
+      setBouquetList(copy);
+    }
+
+    /* const handleOnSave = (list, size) => {
         const values = [list, size.name];
         console.log(values);
         onSave(values);
-    }
+    }*/
 
     return (
         <section>
@@ -22,6 +33,11 @@ const Bouquet = ({ item, list, onSave }) => {
             }
            </div>
            <input onClick={() => handleOnSave(list, size)} className={styles.button} type="button"  value="Boeket opslaan"></input>
+
+           <Overview
+           list = {bouquetList} 
+           size = {size}
+           />
        </section>
     );
 };

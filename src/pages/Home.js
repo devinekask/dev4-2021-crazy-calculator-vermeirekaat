@@ -6,6 +6,7 @@ import Season from "../components/Season";
 import Flower from "../components/Flower";
 import Buttons from "../components/Buttons";
 import Bouquet from "../components/Bouquet";
+import Overview from "../components/Overview";
 
 import Anemone from "../assets/anemone.png";
 import Baronia from "../assets/baronia.png";
@@ -161,6 +162,136 @@ const Home = () => {
         },
       ]
     });
+    const initialState = {
+      lente: [
+        {
+          name: "Anemoon", 
+          image: Anemone, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Iris", 
+          image: Iris, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Tulp", 
+          image: Tulip, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Roos", 
+          image: Rose, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Baronia", 
+          image: Baronia, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+      ],
+      zomer: [
+        {
+          name: "Lilie", 
+          image: Lelie, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Fresia", 
+          image: Fresia, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Zonnebloem", 
+          image: Zonnebloem, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Chrysant", 
+          image: Chrysant, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Lavendel", 
+          image: Lavendel, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+      ],
+      herfst: [
+        {
+          name: "Dahlia", 
+          image: Dahlia, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Gerbera", 
+          image: Gerbera, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Aster", 
+          image: Aster, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Statice", 
+          image: Statice, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Hebe", 
+          image: Hebe, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+      ],
+      winter: [
+        {
+          name: "Jasmijn", 
+          image: Jasmijn, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Camelia", 
+          image: Camelia, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Kerstster", 
+          image: Kerstster, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Tijgerlelie", 
+          image: Tijgerlelie, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+        {
+          name: "Cosmea", 
+          image: Cosmea, 
+          color: "#FAA3FF", 
+          amount: 0
+        },
+      ]
+    };
   
     const [dimensions, setDimensions] = useState([
       {
@@ -186,16 +317,20 @@ const Home = () => {
   
     const [arrayImages, setArrayImages] = useState([]);
 
+    const [bouquetList, setBouquetList] = useState([]);
+
     const handleSaveButton = (bouquet) => {
-      console.log(bouquet);
+      const copy = [...bouquetList];
+      copy.push(bouquet);
+
+      setBouquetList(copy);
     }
   
     const handleChangeSeason = (season) => {
       setSelectedSeason(season);
       
-      setSeasons({...seasons});
-      console.log(seasons);
-      getArrayImages(seasons[season]);    
+      setSeasons({...initialState}); 
+      // console.log(initialState);
     }
   
     const handleChangeColor = (values) => {
@@ -256,7 +391,6 @@ const Home = () => {
   
     const getArrayImages = (items) => {
       const copy = [...arrayImages];
-
       copy.push({name: items.name, image: items.image, color: items.color});
 
       setArrayImages(copy);     
