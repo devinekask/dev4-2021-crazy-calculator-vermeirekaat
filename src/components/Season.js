@@ -7,6 +7,7 @@ const Season = ({ list, onChange }) => {
         const selected = e.target.value;
         onChange(selected);
     }
+    console.log(list);
 
     return (
         <>
@@ -14,7 +15,7 @@ const Season = ({ list, onChange }) => {
                 <label >Selecteer het gepaste seizoen</label>
                     <select onChange={handleSelectSeason}>
                         {list.map((season) => (
-                            <option key={season.index} name="season" value={season}>{season}</option>
+                            <option key={season} name="season" value={season}>{season}</option>
                         ))}
                     </select>           
         </>

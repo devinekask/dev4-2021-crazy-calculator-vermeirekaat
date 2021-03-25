@@ -9,7 +9,7 @@ const Buttons = ({ sizes, onClick }) => {
     return (
         <div className={styles.buttonWrapper}>
             {sizes.map((size) => (
-                <input onClick={(e) => handleClickButton(e)} className={styles.button} type="button" value={size.name} key={sizes.index}></input>
+                <input key={size.name} onClick={(e) => handleClickButton(e)} className={styles.button} type="button" value={size.name}></input>
             ))}
         </div>
         

@@ -36,31 +36,31 @@ const Home = () => {
         {
           name: "Anemoon", 
           image: Anemone, 
-          color: "#FAA3FF", 
+          color: "#FFC0CB", 
           amount: 0
         },
         {
           name: "Iris", 
           image: Iris, 
-          color: "#FAA3FF", 
+          color: "#ff748c", 
           amount: 0
         },
         {
           name: "Tulp", 
           image: Tulip, 
-          color: "#FAA3FF", 
+          color: "#ffdae0", 
           amount: 0
         },
         {
           name: "Roos", 
           image: Rose, 
-          color: "#FAA3FF", 
+          color: "#c0fff4", 
           amount: 0
         },
         {
           name: "Baronia", 
           image: Baronia, 
-          color: "#FAA3FF", 
+          color: "#ffd5c0", 
           amount: 0
         },
       ],
@@ -68,31 +68,31 @@ const Home = () => {
         {
           name: "Lilie", 
           image: Lelie, 
-          color: "#FAA3FF", 
+          color: "#FFC0CB", 
           amount: 0
         },
         {
           name: "Fresia", 
           image: Fresia, 
-          color: "#FAA3FF", 
+          color: "#ff748c", 
           amount: 0
         },
         {
           name: "Zonnebloem", 
           image: Zonnebloem, 
-          color: "#FAA3FF", 
+          color: "ffdae0", 
           amount: 0
         },
         {
           name: "Chrysant", 
           image: Chrysant, 
-          color: "#FAA3FF", 
+          color: "#c0fff4", 
           amount: 0
         },
         {
           name: "Lavendel", 
           image: Lavendel, 
-          color: "#FAA3FF", 
+          color: "#ffd5c0", 
           amount: 0
         },
       ],
@@ -100,31 +100,31 @@ const Home = () => {
         {
           name: "Dahlia", 
           image: Dahlia, 
-          color: "#FAA3FF", 
+          color: "#FFC0CB", 
           amount: 0
         },
         {
           name: "Gerbera", 
           image: Gerbera, 
-          color: "#FAA3FF", 
+          color: "#ff748c", 
           amount: 0
         },
         {
           name: "Aster", 
           image: Aster, 
-          color: "#FAA3FF", 
+          color: "ffdae0", 
           amount: 0
         },
         {
           name: "Statice", 
           image: Statice, 
-          color: "#FAA3FF", 
+          color: "#c0fff4", 
           amount: 0
         },
         {
           name: "Hebe", 
           image: Hebe, 
-          color: "#FAA3FF", 
+          color: "#ffd5c0", 
           amount: 0
         },
       ],
@@ -132,165 +132,35 @@ const Home = () => {
         {
           name: "Jasmijn", 
           image: Jasmijn, 
-          color: "#FAA3FF", 
+          color: "#FFC0CB", 
           amount: 0
         },
         {
           name: "Camelia", 
           image: Camelia, 
-          color: "#FAA3FF", 
+          color: "#ff748c", 
           amount: 0
         },
         {
           name: "Kerstster", 
           image: Kerstster, 
-          color: "#FAA3FF", 
+          color: "ffdae0", 
           amount: 0
         },
         {
           name: "Tijgerlelie", 
           image: Tijgerlelie, 
-          color: "#FAA3FF", 
+          color: "#c0fff4", 
           amount: 0
         },
         {
           name: "Cosmea", 
           image: Cosmea, 
-          color: "#FAA3FF", 
+          color: "#ffd5c0", 
           amount: 0
         },
       ]
     });
-    const initialState = {
-      lente: [
-        {
-          name: "Anemoon", 
-          image: Anemone, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Iris", 
-          image: Iris, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Tulp", 
-          image: Tulip, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Roos", 
-          image: Rose, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Baronia", 
-          image: Baronia, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-      ],
-      zomer: [
-        {
-          name: "Lilie", 
-          image: Lelie, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Fresia", 
-          image: Fresia, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Zonnebloem", 
-          image: Zonnebloem, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Chrysant", 
-          image: Chrysant, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Lavendel", 
-          image: Lavendel, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-      ],
-      herfst: [
-        {
-          name: "Dahlia", 
-          image: Dahlia, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Gerbera", 
-          image: Gerbera, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Aster", 
-          image: Aster, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Statice", 
-          image: Statice, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Hebe", 
-          image: Hebe, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-      ],
-      winter: [
-        {
-          name: "Jasmijn", 
-          image: Jasmijn, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Camelia", 
-          image: Camelia, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Kerstster", 
-          image: Kerstster, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Tijgerlelie", 
-          image: Tijgerlelie, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-        {
-          name: "Cosmea", 
-          image: Cosmea, 
-          color: "#FAA3FF", 
-          amount: 0
-        },
-      ]
-    };
   
     const [dimensions, setDimensions] = useState([
       {
@@ -328,7 +198,7 @@ const Home = () => {
     const handleChangeSeason = (season) => {
       setSelectedSeason(season);
       
-      setSeasons({...initialState}); 
+      setSeasons({...seasons}); 
       // console.log(initialState);
     }
   
