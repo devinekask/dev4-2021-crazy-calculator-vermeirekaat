@@ -6,6 +6,7 @@ import Season from "../components/Season";
 import Flower from "../components/Flower";
 import Buttons from "../components/Buttons";
 import Bouquet from "../components/Bouquet";
+import Overview from "../components/Overview"
 
 import Anemone from "../assets/anemone.png";
 import Baronia from "../assets/baronia.png";
@@ -158,9 +159,138 @@ const Home = () => {
           image: Cosmea, 
           color: "#ffd5c0", 
           amount: 0
-        },
-      ]
+        }]
     });
+
+    const initialState = {
+      lente: [
+      {
+        name: "Anemoon", 
+        image: Anemone, 
+        color: "#FFC0CB", 
+        amount: 0
+      },
+      {
+        name: "Iris", 
+        image: Iris, 
+        color: "#ff748c", 
+        amount: 0
+      },
+      {
+        name: "Tulp", 
+        image: Tulip, 
+        color: "#ffdae0", 
+        amount: 0
+      },
+      {
+        name: "Roos", 
+        image: Rose, 
+        color: "#c0fff4", 
+        amount: 0
+      },
+      {
+        name: "Baronia", 
+        image: Baronia, 
+        color: "#ffd5c0", 
+        amount: 0
+      },
+    ],
+    zomer: [
+      {
+        name: "Lilie", 
+        image: Lelie, 
+        color: "#FFC0CB", 
+        amount: 0
+      },
+      {
+        name: "Fresia", 
+        image: Fresia, 
+        color: "#ff748c", 
+        amount: 0
+      },
+      {
+        name: "Zonnebloem", 
+        image: Zonnebloem, 
+        color: "ffdae0", 
+        amount: 0
+      },
+      {
+        name: "Chrysant", 
+        image: Chrysant, 
+        color: "#c0fff4", 
+        amount: 0
+      },
+      {
+        name: "Lavendel", 
+        image: Lavendel, 
+        color: "#ffd5c0", 
+        amount: 0
+      },
+    ],
+    herfst: [
+      {
+        name: "Dahlia", 
+        image: Dahlia, 
+        color: "#FFC0CB", 
+        amount: 0
+      },
+      {
+        name: "Gerbera", 
+        image: Gerbera, 
+        color: "#ff748c", 
+        amount: 0
+      },
+      {
+        name: "Aster", 
+        image: Aster, 
+        color: "ffdae0", 
+        amount: 0
+      },
+      {
+        name: "Statice", 
+        image: Statice, 
+        color: "#c0fff4", 
+        amount: 0
+      },
+      {
+        name: "Hebe", 
+        image: Hebe, 
+        color: "#ffd5c0", 
+        amount: 0
+      },
+    ],
+    winter: [
+      {
+        name: "Jasmijn", 
+        image: Jasmijn, 
+        color: "#FFC0CB", 
+        amount: 0
+      },
+      {
+        name: "Camelia", 
+        image: Camelia, 
+        color: "#ff748c", 
+        amount: 0
+      },
+      {
+        name: "Kerstster", 
+        image: Kerstster, 
+        color: "ffdae0", 
+        amount: 0
+      },
+      {
+        name: "Tijgerlelie", 
+        image: Tijgerlelie, 
+        color: "#c0fff4", 
+        amount: 0
+      },
+      {
+        name: "Cosmea", 
+        image: Cosmea, 
+        color: "#ffd5c0", 
+        amount: 0
+      }]
+    };
   
     const [dimensions, setDimensions] = useState([
       {
@@ -185,13 +315,30 @@ const Home = () => {
     const [selectedSeason, setSelectedSeason] = useState("lente");
   
     const [arrayImages, setArrayImages] = useState([]);
+
+    const [bouquetList, setBouquetList] = useState([]);
+
+    const handleOnSave = (bouquet) => {
+      const copy = [bouquet, ...bouquetList];
+
+      setBouquetList(copy);
+      getDefaultSeasons(selectedSeason);
+      // setSeasons({initialState});
+    }
   
     const handleChangeSeason = (season) => {
       setSelectedSeason(season);
       
-      setSeasons({...seasons}); 
-      // console.log(initialState);
+      getDefaultSeasons(selectedSeason);
       arrayImages.splice(0, arrayImages.length);
+    }
+
+    const getDefaultSeasons = (season) => {
+      const copy = [...initialState[selectedSeason]];
+      const index = copy.findIndex((check) => check.name === season);
+      copy[index] = seasons[selectedSeason];
+      const newState = {...seasons, [selectedSeason]: copy};
+      setSeasons(newState); 
     }
   
     const handleChangeColor = (values) => {
@@ -310,7 +457,14 @@ const Home = () => {
               dimensions.filter((dimension) => 
               dimension.name === clickedDimension)
             }
+            onClick= {
+              (bouquetList) => handleOnSave(bouquetList)
+            }
           />
+
+          <Overview
+           list = {bouquetList} 
+           />
         </article> 
     </section>
     )

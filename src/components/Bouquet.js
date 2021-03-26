@@ -1,19 +1,14 @@
 import styles from "./Bouquet.module.css";
-import { useState } from "react";
-import Overview from "./Overview";
 
-const Bouquet = ({ item, images }) => {
+const Bouquet = ({ item, images, onClick}) => {
     const size = item[0];
 
-    const [bouquetList, setBouquetList] = useState([]);
+    const saveImages = (images) => {
+        const newImages = [...images];
+        onClick(newImages);
 
-    const handleOnSave = (bouquet) => {
-      const copy = [...bouquetList];
-      copy.push(bouquet);
-
-      setBouquetList(copy);
+        images.splice(0, images.length);
     }
-
     return (
         <section>
         <h3 className={styles.subtitle}>Boeket {size.name}</h3>
@@ -26,12 +21,7 @@ const Bouquet = ({ item, images }) => {
                 ))    
             }
            </div>
-           <input onClick={() => handleOnSave(images, size)} className={styles.button} type="button"  value="Boeket opslaan"></input>
-
-           <Overview
-           list = {bouquetList} 
-           size = {size}
-           />
+           <input onClick={() => saveImages(images)} className={styles.button} type="button"  value="Boeket opslaan"></input>
        </section>
     );
 };

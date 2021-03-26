@@ -1,6 +1,6 @@
 import styles from "./Overview.module.css";
 
-const Overview = ({ list, size }) => {
+const Overview = ({ list }) => {
 
     // console.log(list);
     const newList = [...list];
