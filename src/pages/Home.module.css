@@ -1,5 +1,5 @@
 @value values: "../style/values.module.css";
-@value primaryColor from values;
+@value primaryColor, secondaryColor, margin, marginSmall, marginLarge from values;
 
 .content {
     composes: grid from "../style/layouts.module.css";
@@ -14,4 +14,17 @@
 .bouquet {
     grid-row: 1;
     grid-column: 3;
+}
+
+.instructions {
+    margin-bottom: marginSmall;
+}
+
+.step {
+    margin-bottom: calc(marginSmall / 2);
+    margin-left: margin;
+}
+
+.step span {
+    color: secondaryColor;
 }

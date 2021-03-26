@@ -37,18 +37,18 @@ const Flower = ({ list, total, onColorChange, onAmountChange }) => {
 
     return (
       <form>
-        <p>Je kan {amount.max} bloemen kiezen.</p>
+        <p className={styles.info}>Je kan <span> {amount.max} </span> bloemen kiezen.</p>
       <p className={styles.subtitle}>{calculateAmount()}</p>
       {
         list.map((flower) => (
-          <>
-          <label key={flower.name} className={styles.label}>{flower.name}
-              <input key={`input ${flower.name}`} onChange={(e) => changeAmount(e, flower, amount.max)} type="number" name={flower.name} min="0" value={flower.amount}></input>   
-          </label>   
+          <div className={styles.group}>
            <label key={flower.id} className={styles.label}>Kleur {flower.color}
             <input key={`input ${flower.id}`} onChange={(e) => changeColor(e, flower)} type="color" value={flower.color}></input>
          </label>
-         </>
+          <label key={flower.name} className={styles.label}>{flower.name}
+              <input key={`input ${flower.name}`} onChange={(e) => changeAmount(e, flower, amount.max)} type="number" name={flower.name} min="0" value={flower.amount}></input>   
+          </label>       
+         </div>
         ))
       }
       </form>

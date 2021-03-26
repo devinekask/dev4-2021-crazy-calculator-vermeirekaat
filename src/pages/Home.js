@@ -323,7 +323,6 @@ const Home = () => {
 
       setBouquetList(copy);
       getDefaultSeasons(selectedSeason);
-      // setSeasons({initialState});
     }
   
     const handleChangeSeason = (season) => {
@@ -414,6 +413,13 @@ const Home = () => {
     return (
       <section className={styles.content}>
         <article className={styles.form}>
+          <div className={styles.instructions}>
+            <p className={styles.step}> <span>Stap 1</span> - Kies een seizoen om de beste bloemen te verkrijgen.</p>
+            <p className={styles.step}> <span>Stap 2</span> - Bepaal de grote van je boeket.</p>
+            <p className={styles.step}> <span>Stap 3</span> - Selecteer een kleur voor elke bloem.</p>
+            <p className={styles.step}> <span>Stap 4</span> - Stel je boeket samen.</p>
+            <p className={styles.step}> <span>Stap 5</span> - Bewaar je favoriete bloemboeketten.</p>
+          </div>
         <Season 
           list= { seasonsArray } 
           onChange= {

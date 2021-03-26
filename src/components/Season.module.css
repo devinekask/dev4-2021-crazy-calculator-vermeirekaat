@@ -1,3 +1,22 @@
+@value values: "../style/values.module.css";
+@value titleFont, subtitleFont, bodyFont, primaryColor, secondaryColor, marginSmall, marginLarge from values;
+
 .hidden {
     display: none;
+}
+
+.container {
+    margin-left: calc(marginLarge *2);
+    position: relative;
+    top: 4rem;
+    left: 4rem;
+}
+
+
+.selection select {
+    background-color: primaryColor;
+    padding: calc(marginSmall/2);
+    text-transform: capitalize;
+    font-weight: bold;
+    border: secondaryColor .2rem solid; 
 }

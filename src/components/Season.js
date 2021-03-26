@@ -9,15 +9,17 @@ const Season = ({ list, onChange }) => {
     }
 
     return (
-        <>
+        <div className={styles.container}>
             <h2 className={styles.hidden}>Formulier</h2>
-                <label >Selecteer het gepaste seizoen</label>
-                    <select onChange={handleSelectSeason}>
+                <div className={styles.selection}>
+                <select onChange={handleSelectSeason}>
                         {list.map((season) => (
                             <option key={season} name="season" value={season}>{season}</option>
                         ))}
-                    </select>           
-        </>
+                    </select>        
+                </div>
+                       
+        </div>
     );
 }
 

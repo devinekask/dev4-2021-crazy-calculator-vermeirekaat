@@ -1,13 +1,33 @@
 @value values: "../style/values.module.css";
-@value subtitleFont, bodyFont, margin, secondaryColor from values;
+@value subtitleFont, bodyFont, sloganFont, margin, secondaryColor from values;
 
 .subtitle {
     font-size: subtitleFont;
     color: secondaryColor;
     font-style: italic;
     margin: margin;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .label {
     font-size: bodyFont;
+}
+
+.group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-end;
+    font-size: calc(sloganFont / 1.5);
+}
+
+.info span {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    color: secondaryColor;
+    font-weight: bold;
 }
