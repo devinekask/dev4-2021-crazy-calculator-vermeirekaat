@@ -15,8 +15,8 @@ const Bouquet = ({ item, images, onClick}) => {
            <div className={styles[size.name]}>
             {
             images.map((flower) => (
-                <div className={styles.overlay} style={{ backgroundColor: flower.color }}>
-                    <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width={size.number}></img>
+                <div key={images.indexOf(flower)} className={styles.overlay} style={{ backgroundColor: flower.color }}>
+                    <img key={`image ${images.indexOf(flower)}`} className={styles.image} src={flower.image} alt={flower.name} width={size.number}></img>
                 </div>
                 ))    
             }

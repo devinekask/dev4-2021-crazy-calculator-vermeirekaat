@@ -21,8 +21,8 @@ const Overview = ({ list }) => {
             <div className={styles.klein}>
                {
                flowers.map((flower) => (
-                   <div className={styles.overlay} style={{backgroundColor: flower.color}}>
-                       <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width="50"></img>
+                   <div key={`div ${flowers.indexOf(flower)}`} className={styles.overlay} style={{backgroundColor: flower.color}}>
+                       <img key={flowers.indexOf(flower)} className={styles.image} src={flower.image} alt={flower.name} width="50"></img>
                    </div>
                    ))
                }
@@ -38,10 +38,10 @@ const Overview = ({ list }) => {
                 <div className={styles.overview}>
 
                  {newList.map((flowers) => (
-                    <div className={styles.klein}>        
+                    <div key={`div ${newList.indexOf(flowers)}`} className={styles.klein}>        
                     {flowers.map((flower) => (
-                        <div className={styles.overlay} style={{backgroundColor: flower.color}}>
-                            <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width="50"></img>
+                        <div key={flowers.indexOf(flower)} className={styles.overlay} style={{backgroundColor: flower.color}}>
+                            <img key={`div ${flowers.indexOf(flower)}`}className={styles.image} src={flower.image} alt={flower.name} width="50"></img>
                         </div>
                         ))}
                     </div>

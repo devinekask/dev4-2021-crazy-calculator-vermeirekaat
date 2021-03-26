@@ -9,7 +9,6 @@ const App = () => {
 
   return (
     <>
-      <p className={styles.hidden}>Crazy Calculator</p>
       <section className={styles.header}>
         <h2 className={styles.title}>BloemBoeket</h2>
         <p className={styles.slogan}>Stel zelf je bloemboeket samen, perfect voor elke gelegenheid!</p>
