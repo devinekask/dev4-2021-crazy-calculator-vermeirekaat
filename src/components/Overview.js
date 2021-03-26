@@ -8,7 +8,7 @@ const Overview = ({ list }) => {
     if(newList.length <= 0) {
         return (
             <div>
-                <h2 className={styles.subtitle}>Mijn Boeketten</h2>
+                <h2 className={styles.subtitle}>Mijn Boeketten ({newList.length})</h2>
                 <p className={styles.info}>Je hebt nog geen boeketten opgeslagen.</p>
             </div>         
         )
@@ -17,7 +17,7 @@ const Overview = ({ list }) => {
         const flowers = newList[0];
         return (
             <>
-            <h2 className={styles.subtitle}>Mijn Boeketten</h2>
+            <h2 className={styles.subtitle}>Mijn Boeketten ({newList.length})</h2>
             <div className={styles.klein}>
                {
                flowers.map((flower) => (
@@ -34,7 +34,7 @@ const Overview = ({ list }) => {
     if (newList.length >= 2 ) {
         return (
             <>
-            <h2 className={styles.subtitle}>Mijn Boeketten</h2>
+            <h2 className={styles.subtitle}>Mijn Boeketten ({newList.length})</h2>
                 <div className={styles.overview}>
 
                  {newList.map((flowers) => (
