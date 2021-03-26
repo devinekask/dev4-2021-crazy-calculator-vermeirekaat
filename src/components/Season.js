@@ -7,7 +7,6 @@ const Season = ({ list, onChange }) => {
         const selected = e.target.value;
         onChange(selected);
     }
-    console.log(list);
 
     return (
         <>

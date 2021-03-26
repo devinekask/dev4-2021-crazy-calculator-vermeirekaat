@@ -2,10 +2,10 @@ import styles from "./Overview.module.css";
 
 const Overview = ({ list, size }) => {
 
-    console.log(list);
+    // console.log(list);
     const newList = [...list];
 
-    if(list.length <= 0) {
+    if(newList.length <= 0) {
         return (
             <div>
                 <h2 className={styles.subtitle}>Mijn Boeketten</h2>
@@ -13,7 +13,7 @@ const Overview = ({ list, size }) => {
             </div>         
         )
     }
-    if (list.length === 1) {  
+    if (newList.length === 1) {  
         const flowers = newList[0];
         return (
             <>
@@ -31,7 +31,7 @@ const Overview = ({ list, size }) => {
            
         )
     }
-    if (list.length >= 2 ) {
+    if (newList.length >= 2 ) {
         return (
             <>
             <h2 className={styles.subtitle}>Mijn Boeketten</h2>

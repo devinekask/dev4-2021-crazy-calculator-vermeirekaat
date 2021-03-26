@@ -200,6 +200,7 @@ const Home = () => {
       
       setSeasons({...seasons}); 
       // console.log(initialState);
+      arrayImages.splice(0, arrayImages.length);
     }
   
     const handleChangeColor = (values) => {
