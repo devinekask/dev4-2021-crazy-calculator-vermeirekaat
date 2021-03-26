@@ -2,7 +2,7 @@ import styles from "./Bouquet.module.css";
 import { useState } from "react";
 import Overview from "./Overview";
 
-const Bouquet = ({ item, list }) => {
+const Bouquet = ({ item, images }) => {
     const size = item[0];
 
     const [bouquetList, setBouquetList] = useState([]);
@@ -19,14 +19,14 @@ const Bouquet = ({ item, list }) => {
         <h3 className={styles.subtitle}>Boeket {size.name}</h3>
            <div className={styles[size.name]}>
             {
-            list.map((flower) => (
+            images.map((flower) => (
                 <div className={styles.overlay} style={{ backgroundColor: flower.color }}>
                     <img className={styles.image} src={flower.image} key={flower.name} alt={flower.name} width={size.number}></img>
                 </div>
                 ))    
             }
            </div>
-           <input onClick={() => handleOnSave(list, size)} className={styles.button} type="button"  value="Boeket opslaan"></input>
+           <input onClick={() => handleOnSave(images, size)} className={styles.button} type="button"  value="Boeket opslaan"></input>
 
            <Overview
            list = {bouquetList} 

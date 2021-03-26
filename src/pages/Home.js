@@ -185,15 +185,6 @@ const Home = () => {
     const [selectedSeason, setSelectedSeason] = useState("lente");
   
     const [arrayImages, setArrayImages] = useState([]);
-
-    const [bouquetList, setBouquetList] = useState([]);
-
-    const handleSaveButton = (bouquet) => {
-      const copy = [...bouquetList];
-      copy.push(bouquet);
-
-      setBouquetList(copy);
-    }
   
     const handleChangeSeason = (season) => {
       setSelectedSeason(season);
@@ -213,9 +204,7 @@ const Home = () => {
       copy[index] = itemCopy;
       const newState = {...seasons, [selectedSeason]: copy};
   
-      // getArrayImages(values);
       setSeasons(newState);
-      // console.log(seasons);
 
       const copyArray = [...arrayImages]; 
       const indexArray = copyArray.filter((check) => check.name === items.name);
@@ -243,7 +232,7 @@ const Home = () => {
       copy[index] = itemCopy;
       const newState = {...seasons, [selectedSeason]: copy};
 
-      if (previousAmount > changedAmount) {
+      if (totalAmount <= maxAmount && previousAmount > changedAmount) {
         const name = copy[index].name;
         const array = [...arrayImages];
         const searchName = array.findIndex((check) => check.name === name);
@@ -316,14 +305,10 @@ const Home = () => {
           />
   
           <Bouquet 
-            list= { arrayImages } 
+            images= { arrayImages } 
             item= {
               dimensions.filter((dimension) => 
               dimension.name === clickedDimension)
-            }
-            color= { seasons[selectedSeason] }
-            onSave= {
-              (newBouquet) => handleSaveButton(newBouquet)
             }
           />
         </article> 
