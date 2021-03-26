@@ -319,7 +319,9 @@ const Home = () => {
     const [bouquetList, setBouquetList] = useState([]);
 
     const handleOnSave = (bouquet) => {
-      const copy = [bouquet, ...bouquetList];
+      const newName = bouquet[0];
+      const newBouquet = bouquet[1];
+      const copy = [{name: newName, bouquet: newBouquet}, ...bouquetList];
 
       setBouquetList(copy);
       getDefaultSeasons(selectedSeason);

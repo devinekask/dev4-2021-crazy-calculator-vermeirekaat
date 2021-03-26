@@ -1,5 +1,5 @@
 @value values: "../style/values.module.css";
-@value subtitleFont, bodyFont, margin, primaryColor, secondaryColor from values;
+@value subtitleFont, bodyFont, margin, marginLarge, primaryColor, secondaryColor from values;
 
 .subtitle {
     font-size: subtitleFont;
@@ -29,12 +29,22 @@
     grid-template-columns: repeat(2, 50%);
 }
 
+.part {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
 .name {
     text-align: center;
 }
 
+.first {
+    text-align: left;
+    margin-left: marginLarge;
+}
+
 .klein {
-    composes: boeket from "../style/circles.module.css";
+    composes: overview from "../style/circles.module.css";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
@@ -43,7 +53,7 @@
 }
 
 .gemiddeld {
-    composes: boeket from "../style/circles.module.css";
+    composes: overview from "../style/circles.module.css";
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 
@@ -52,7 +62,7 @@
 }
 
 .groot {
-    composes: boeket from "../style/circles.module.css";
+    composes: overview from "../style/circles.module.css";
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
 

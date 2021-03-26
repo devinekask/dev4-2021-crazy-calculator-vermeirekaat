@@ -1,10 +1,18 @@
 @value values: "./values.module.css";
-@value marginLarge from values;
+@value marginLarge, marginSmall from values;
 
 .boeket {
     border-radius: 100%;
     border: .3rem solid black;
     margin: marginLarge;
+
+    display: grid;
+}
+
+.overview {
+    border-radius: 100%;
+    border: .3rem solid gray;
+    margin: marginSmall;
 
     display: grid;
 }

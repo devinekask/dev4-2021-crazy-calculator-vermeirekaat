@@ -5,7 +5,6 @@
     font-size: subtitleFont;
     color: secondaryColor;
     font-style: italic;
-    margin: margin;
 }
 
 .overlay {
@@ -13,6 +12,10 @@
     height: 100%;
     overflow: hidden;
     opacity: 50%;
+}
+
+.container {
+    margin: margin;
 }
 
 .image {
@@ -54,7 +57,6 @@
     text-transform: uppercase;
     width: 10rem;
     height: 3.5rem;
-    margin: margin;
 }
 
 .button:active {
